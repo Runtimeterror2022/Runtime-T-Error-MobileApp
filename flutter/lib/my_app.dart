@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:mvc_bolierplate_getx/core/constants/color_palette.dart';
+import 'package:mvc_bolierplate_getx/feature/bottom_navigation_bar/view/bottom_navigation_bar_screen.dart';
 import 'package:mvc_bolierplate_getx/feature/log_in/view/login_screen.dart';
 
 import 'core/constants/image_path.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
                 ]);
                 return GetMaterialApp(
                   title: 'MyApp',
-                  home: LoginScreen(),
+                  home: CustomBottomNavigationBar(),
                 );
               })));
 }
