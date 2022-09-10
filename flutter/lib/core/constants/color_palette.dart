@@ -4,6 +4,7 @@ abstract class AppColors {
   static const kPureWhite = Color(0xFFFFFFFF);
   static const kPureBlack = Color(0xFF000000);
   static const kgrey300 = Color(0xFF6C6C6C);
+
   static const kgrey50 = Color(0xFF505050);
 
   static const kborder = Color(0xFFE9E9E9);
@@ -12,6 +13,9 @@ abstract class AppColors {
   static const kactiveText = Color(0xFF0BA700);
   static const kinActiveBackground = Color(0xFFFDECEC);
   static const kinActiveText = Color(0xFFEF4444);
+  static const kprimary = Color(0xFFf5f5f5);
+  static const ksecondary = Color(0xFF242424);
+
   static const ktransparent = Colors.transparent;
   static const kYellow = Color(0xFFFFB823);
 }
