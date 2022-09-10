@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/antino/Desktop/ApiServer/flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/Users/antino/Desktop/ApiServer/flutter/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

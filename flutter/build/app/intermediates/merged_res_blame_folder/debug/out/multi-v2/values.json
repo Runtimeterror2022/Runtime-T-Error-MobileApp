@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/antino/Desktop/ApiServer/flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
                     "source": "/Users/antino/.gradle/caches/transforms-3/52fde5186cb08d3efcbba20a15c02c66/transformed/fragment-1.3.0/res/values/values.xml",
@@ -80,20 +80,22 @@
                     }
                 },
                 {
-                    "source": "/Users/antino/Desktop/ApiServer/flutter/build/firebase_crashlytics/intermediates/packaged_res/debug/values/values.xml",
+                    "source": "/Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/android/app/src/main/res/values/styles.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "60",
-                        "endOffsets": "111"
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "173,818",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "476,982"
                     },
                     "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "1025",
-                        "endColumns": "60",
-                        "endOffsets": "1081"
+                        "startLines": "1491,1496",
+                        "startColumns": "4,4",
+                        "startOffsets": "98472,98780",
+                        "endLines": "1495,1498",
+                        "endColumns": "12,12",
+                        "endOffsets": "98775,98944"
                     }
                 },
                 {
@@ -205,25 +207,6 @@
                     }
                 },
                 {
-                    "source": "/Users/antino/Desktop/ApiServer/flutter/android/app/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "3,14",
-                        "startColumns": "4,4",
-                        "startOffsets": "173,818",
-                        "endLines": "7,16",
-                        "endColumns": "12,12",
-                        "endOffsets": "476,982"
-                    },
-                    "to": {
-                        "startLines": "1491,1496",
-                        "startColumns": "4,4",
-                        "startOffsets": "98472,98780",
-                        "endLines": "1495,1498",
-                        "endColumns": "12,12",
-                        "endOffsets": "98775,98944"
-                    }
-                },
-                {
                     "source": "/Users/antino/.gradle/caches/transforms-3/992c409fa2324ef5eeb324c08fe7ed56/transformed/jetified-window-1.0.0-beta04/res/values/values.xml",
                     "from": {
                         "startLines": "2,7,8,9,10,11,19,23,34,51",
@@ -240,6 +223,23 @@
                         "endLines": "12,13,14,15,295,2102,2106,3367,3384,3392",
                         "endColumns": "11,59,51,44,59,24,24,24,24,24",
                         "endOffsets": "646,706,758,803,19764,142811,143008,210208,211322,211715"
+                    }
+                },
+                {
+                    "source": "/Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_crashlytics/intermediates/packaged_res/debug/values/values.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "60",
+                        "endOffsets": "111"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1025",
+                        "endColumns": "60",
+                        "endOffsets": "1081"
                     }
                 },
                 {
