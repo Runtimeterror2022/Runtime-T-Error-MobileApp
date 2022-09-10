@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/antino/Desktop/ApiServer/flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-ta/values-ta.xml",
+            "outputFile": "/Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-ta/values-ta.xml",
             "map": [
                 {
                     "source": "/Users/antino/.gradle/caches/transforms-3/e14b72aaf6d6622c6b1e6c2e1f0f5be8/transformed/jetified-play-services-base-18.0.1/res/values-ta/values.xml",
