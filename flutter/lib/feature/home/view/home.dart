@@ -49,18 +49,6 @@ class _HomePageState extends State<HomePage> {
     },
   ];
 
-  // Initial Selected Value
-  String dropdownvalue = 'Previous Calls';
-
-  // List of items in our dropdown menu
-  var items = [
-    'Previous Calls',
-    'Upcoming Calls',
-    'Item 3',
-    'Item 4',
-    'Item 5',
-  ];
-
   @override
   void initState() {
     super.initState();
@@ -75,6 +63,7 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         backgroundColor: const Color.fromRGBO(250, 250, 250, 1),
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Colors.white,
           title: Text(
             'Dashboard',
