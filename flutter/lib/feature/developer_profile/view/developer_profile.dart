@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mvc_bolierplate_getx/core/constants/app_text_style.dart';
 import 'package:mvc_bolierplate_getx/core/constants/color_palette.dart';
 import 'package:mvc_bolierplate_getx/core/reponsive/SizeConfig.dart';
+import 'package:random_avatar/random_avatar.dart';
 
 class DeveloperProfileScreen extends StatefulWidget {
   String name;
