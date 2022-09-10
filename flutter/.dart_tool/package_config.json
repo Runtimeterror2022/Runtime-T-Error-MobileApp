@@ -434,6 +434,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "random_avatar",
+      "rootUri": "file:///Users/antino/Desktop/version/3.0.2/.pub-cache/hosted/pub.dartlang.org/random_avatar-0.0.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "shared_preferences",
       "rootUri": "file:///Users/antino/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-2.0.15",
       "packageUri": "lib/",
@@ -608,7 +614,9 @@
       "languageVersion": "2.17"
     }
   ],
+
   "generated": "2022-09-10T08:15:03.267059Z",
+
   "generator": "pub",
   "generatorVersion": "2.18.0"
 }

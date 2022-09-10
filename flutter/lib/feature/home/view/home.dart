@@ -48,6 +48,18 @@ class _HomePageState extends State<HomePage> {
     },
   ];
 
+  // Initial Selected Value
+  String dropdownvalue = 'Previous Calls';
+
+  // List of items in our dropdown menu
+  var items = [
+    'Previous Calls',
+    'Upcoming Calls',
+    'Item 3',
+    'Item 4',
+    'Item 5',
+  ];
+
   @override
   void initState() {
     super.initState();
@@ -185,9 +197,12 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const Spacer(),
-            const Icon(
-              Icons.more_vert,
-              color: AppColors.kgrey50,
+            InkWell(
+              onTap: () {},
+              child: const Icon(
+                Icons.more_vert,
+                color: AppColors.kgrey50,
+              ),
             )
           ]),
     );
