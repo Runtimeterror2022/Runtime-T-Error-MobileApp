@@ -10,4 +10,5 @@ abstract class ImagePath {
   static const String developerIcon = 'assets/bottom_navigation_bar/developer_icon.svg';
   static const String clientIcon = 'assets/bottom_navigation_bar/client_icon.svg';
   static const String dashBoardIcon = 'assets/bottom_navigation_bar/Dashboard_icon.svg';
+  static const String userIcon = 'assets/profile.svg';
 }

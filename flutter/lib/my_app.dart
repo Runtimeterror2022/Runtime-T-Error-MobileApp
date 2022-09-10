@@ -6,6 +6,7 @@ import 'package:mvc_bolierplate_getx/core/constants/color_palette.dart';
 import 'package:mvc_bolierplate_getx/feature/bottom_navigation_bar/view/bottom_navigation_bar_screen.dart';
 
 import 'core/reponsive/SizeConfig.dart';
+import 'feature/log_in/view/login_screen.dart';
 
 class MyApp extends StatelessWidget {
   // final AppTranslations translations;
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
                   ),
                   debugShowCheckedModeBanner: false,
                   title: 'MyApp',
-                  home: const CustomBottomNavigationBar(),
+                  home:  LoginScreen(),
                 );
               })));
 }

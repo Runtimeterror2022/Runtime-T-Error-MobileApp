@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class LoginController extends GetxController {
+import '../../../core/universal_widgets/custom-toast.dart';
+import '../../bottom_navigation_bar/view/bottom_navigation_bar_screen.dart';
+import '../services/login_services.dart';
+import '../view/send-verification-mail.dart';
 
+class LoginController extends GetxController {
   RxBool isLoginLoading = false.obs;
+  RxBool userClickedOnLoginButton = false.obs;
   RxBool isLoginClicked = false.obs;
   RxBool isSendingMail = false.obs;
   String? validateEmailText;
@@ -15,6 +20,23 @@ class LoginController extends GetxController {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController emailLoginController = TextEditingController();
   final TextEditingController emailResetController = TextEditingController();
+
+
+  Future<void> loginUser({required BuildContext context}) async {
+    var data =  await LogInService().loginUser(
+         email: emailLoginController.text,
+        password: passwordController.text);
+    if(data == true ){
+      ShowCustomToast().showToast(message: "Successfully logged in");
+    //   Navigator.push(context, MaterialPageRoute(
+    //       builder: (BuildContext context) => CustomBottomNavigationBar(),
+    // ));
+    } else if(data == false ){
+      ShowCustomToast().showToast(errorMessage:true,message: "Successfully logged in");
+    }
+
+  }
+
 
   String? checkEmailValidation() {
     if (emailLoginController.text.isEmpty) {

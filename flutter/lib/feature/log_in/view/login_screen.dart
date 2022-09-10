@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:mvc_bolierplate_getx/feature/log_in/view/send-verification-mail.dart';
 import '../../../core/constants/app_text_style.dart';
 import '../../../core/constants/color_palette.dart';
@@ -8,6 +9,7 @@ import '../../../core/constants/image_path.dart';
 import '../../../core/reponsive/SizeConfig.dart';
 import '../../../core/universal_widgets/custom-button.dart';
 import '../../../core/universal_widgets/custom-text-field.dart';
+import '../../bottom_navigation_bar/view/bottom_navigation_bar_screen.dart';
 import '../controller/login_controller.dart';
 
 
@@ -15,8 +17,6 @@ class LoginScreen extends StatelessWidget {
   LoginScreen({Key? key}) : super(key: key);
   final LoginController logInController=Get.put(LoginController());
   final obSecurePassword = true.obs;
-  RxBool userClickedOnLoginButton = false.obs;
-
 
   @override
   Widget build(BuildContext context) => SafeArea(
@@ -104,53 +104,48 @@ class LoginScreen extends StatelessWidget {
                     height: 48 * SizeConfig.heightMultiplier!,
                   ),
 
-                  // Obx(
-                  //       ()=>!userClickedOnLoginButton.value?
+                  Obx(
+                        ()=>logInController.userClickedOnLoginButton.value
+                            ?Center(
+                          child: SizedBox(
+                            height: 50 * SizeConfig.heightMultiplier!,
+                            width: 50 * SizeConfig.widthMultiplier!,
+                            child: Center(
+                                child: Lottie.asset(
+                                    'assets/circular.json')),
+                          ),
+                        ):
                         CustomButton(
                         onPressed: () async {
                           if(logInController.validatePasswordText == null && logInController.validateEmailText == null){
-                            if(!userClickedOnLoginButton.value){
-                              userClickedOnLoginButton.value = true;
-                              logInController.checkEmailValidation();
-                              logInController.checkPasswordValidation();
+                            if(!logInController.userClickedOnLoginButton.value){
+                              logInController.userClickedOnLoginButton.value = true;
+                              logInController..checkEmailValidation()
+                              ..checkPasswordValidation();
                               FocusManager.instance.primaryFocus?.unfocus();
-                              // await logInController.userLogIn(
-                              //     logInController.emailLoginController.text,
-                              //     logInController.passwordController.text,
-                              //     context);
-                              userClickedOnLoginButton.value = false;
+                              await logInController.loginUser(context: context);
+                              Navigator.push(context, MaterialPageRoute(
+                                builder: (BuildContext context) => CustomBottomNavigationBar(),
+                              ));
+                              logInController.userClickedOnLoginButton.value = false;
                             }
                           }
                         },
                         text: "Login to your account".toUpperCase())
-                  // :Center(
-                  //     child: SizedBox(
-                  //       height: 70 * SizeConfig.heightMultiplier!,
-                  //       width: 70 * SizeConfig.widthMultiplier!,
-                  //       child: Center(
-                  //           child: Lottie.asset(
-                  //               'assets/images/loading-lottie.json')),
-                  //     ),
-                  //   ),
-                  ,
-
+                  ),
                   SizedBox(
                     height: 24 * SizeConfig.heightMultiplier!,
                   ),
                   GestureDetector(
-                      onTap: () {
+                      onTap: () async {
                         logInController
                           ..validateEmailText = null
-                          ..update(['validate-email-text']);
-                        logInController
+                          ..update(['validate-email-text'])
                           ..validatePasswordText = null
                           ..update(['validate-password-text']);
                         Navigator.push(context, MaterialPageRoute(
                           builder: (BuildContext context) => SendVerificationMailScreen(),
                         ));
-                        // Navigator.pushNamed(
-                        //     context, RouteName.sendVerificationScreen);
-                        logInController.flushValues();
                       },
                       child: Center(
                           child: Text(
