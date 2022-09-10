@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:mvc_bolierplate_getx/feature/bottom_navigation_bar/view/bottom_navigation_bar_screen.dart';
+import 'package:mvc_bolierplate_getx/feature/home/view/home.dart';
 import 'package:mvc_bolierplate_getx/feature/log_in/view/send-verification-mail.dart';
 import '../../../core/constants/app_text_style.dart';
 import '../../../core/constants/color_palette.dart';
@@ -12,15 +14,13 @@ import '../../../core/universal_widgets/custom-text-field.dart';
 import '../../bottom_navigation_bar/view/bottom_navigation_bar_screen.dart';
 import '../controller/login_controller.dart';
 
-
 class LoginScreen extends StatelessWidget {
   LoginScreen({Key? key}) : super(key: key);
-  final LoginController logInController=Get.put(LoginController());
+  final LoginController logInController = Get.put(LoginController());
   final obSecurePassword = true.obs;
-
   @override
   Widget build(BuildContext context) => SafeArea(
-      child: GestureDetector(
+          child: GestureDetector(
         onTap: () {
           FocusManager.instance.primaryFocus?.unfocus();
         },
@@ -39,13 +39,14 @@ class LoginScreen extends StatelessWidget {
                   Align(
                     alignment: Alignment.center,
                     child: Padding(
-                        padding: EdgeInsets.only(
-                            top: 80 * SizeConfig.heightMultiplier!,
-                            bottom: 32 * SizeConfig.heightMultiplier!),
-                        child:  SvgPicture.asset(ImagePath.appLogo,
-                          width: 150 * SizeConfig.widthMultiplier!,
-                            height: 150 * SizeConfig.heightMultiplier!,),
-
+                      padding: EdgeInsets.only(
+                          top: 80 * SizeConfig.heightMultiplier!,
+                          bottom: 32 * SizeConfig.heightMultiplier!),
+                      child: SvgPicture.asset(
+                        ImagePath.appLogo,
+                        width: 150 * SizeConfig.widthMultiplier!,
+                        height: 150 * SizeConfig.heightMultiplier!,
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -61,45 +62,44 @@ class LoginScreen extends StatelessWidget {
                   GetBuilder<LoginController>(
                       id: "validate-email-text",
                       builder: (logInController) => CustomTextField(
-                          textEditingController:
-                          logInController.emailLoginController,
-                          onChanged: (value) {
-                            logInController.checkEmailValidation();
-                          },
-                          errorText: logInController.validateEmailText,
-                          // validator: (value) => value!.isEmpty? "This field is Required":null,
-                          textInputType: TextInputType.emailAddress,
-                          isObsecure: false,
-                          hint: "Enter your email", label: 'Email address',
-                        )),
+                            textEditingController:
+                                logInController.emailLoginController,
+                            onChanged: (value) {
+                              logInController.checkEmailValidation();
+                            },
+                            errorText: logInController.validateEmailText,
+                            // validator: (value) => value!.isEmpty? "This field is Required":null,
+                            textInputType: TextInputType.emailAddress,
+                            isObsecure: false,
+                            hint: "Enter your email", label: 'Email address',
+                          )),
                   SizedBox(
                     height: 24 * SizeConfig.heightMultiplier!,
                   ),
                   GetBuilder<LoginController>(
                       id: "validate-password-text",
                       builder: (logInController) => CustomTextField(
-                            textEditingController:
-                            logInController.passwordController,
-                            onChanged: (value) {
-                              logInController.checkPasswordValidation();
-                            },
-                            errorText: logInController.validatePasswordText,
-                            textInputType: TextInputType.visiblePassword,
-                            isObsecure: obSecurePassword.value,
-                            hint: "Enter your password",
-                            onSuffixTap: () {
-                              obSecurePassword.value = !obSecurePassword.value;
-                              logInController
-                                  .update(['validate-password-text']);
-                            },
-                            suffixWidget: Icon(
-                              obSecurePassword.value
-                                  ? Icons.visibility_off
-                                  : Icons.visibility,
-                              color: grey80,
-                              size: 20 * SizeConfig.widthMultiplier!,
-                            ),
-                            label: 'Password')),
+                          textEditingController:
+                              logInController.passwordController,
+                          onChanged: (value) {
+                            logInController.checkPasswordValidation();
+                          },
+                          errorText: logInController.validatePasswordText,
+                          textInputType: TextInputType.visiblePassword,
+                          isObsecure: obSecurePassword.value,
+                          hint: "Enter your password",
+                          onSuffixTap: () {
+                            obSecurePassword.value = !obSecurePassword.value;
+                            logInController.update(['validate-password-text']);
+                          },
+                          suffixWidget: Icon(
+                            obSecurePassword.value
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                            color: grey80,
+                            size: 20 * SizeConfig.widthMultiplier!,
+                          ),
+                          label: 'Password')),
                   SizedBox(
                     height: 48 * SizeConfig.heightMultiplier!,
                   ),
@@ -118,20 +118,26 @@ class LoginScreen extends StatelessWidget {
                         CustomButton(
                         onPressed: () async {
                           if(logInController.validatePasswordText == null && logInController.validateEmailText == null){
-                            if(!logInController.userClickedOnLoginButton.value){
-                              logInController.userClickedOnLoginButton.value = true;
-                              logInController..checkEmailValidation()
-                              ..checkPasswordValidation();
+                            if(!logInController.userClickedOnLoginButton.value) {
+                            logInController.userClickedOnLoginButton.value = true;
+                            logInController..checkEmailValidation()
+                            ..checkPasswordValidation();
                               FocusManager.instance.primaryFocus?.unfocus();
                               await logInController.loginUser(context: context);
-                              Navigator.push(context, MaterialPageRoute(
+                            Navigator.push(context, MaterialPageRoute(
                                 builder: (BuildContext context) => CustomBottomNavigationBar(),
                               ));
-                              logInController.userClickedOnLoginButton.value = false;
-                            }
+                            logInController.userClickedOnLoginButton.value = false;
                           }
-                        },
-                        text: "Login to your account".toUpperCase())
+                        }
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  CustomBottomNavigationBar()),
+                        );
+                      },
+                      text: "Login to your account".toUpperCase())
                   ),
                   SizedBox(
                     height: 24 * SizeConfig.heightMultiplier!,
@@ -143,18 +149,21 @@ class LoginScreen extends StatelessWidget {
                           ..update(['validate-email-text'])
                           ..validatePasswordText = null
                           ..update(['validate-password-text']);
-                        Navigator.push(context, MaterialPageRoute(
-                          builder: (BuildContext context) => SendVerificationMailScreen(),
-                        ));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  SendVerificationMailScreen(),
+                            ));
                       },
                       child: Center(
-                          child: Text(
-                            "Forgot your password?",
-                            style: AppTextStyle1.normalGreyTTCommon400.copyWith(
-                              fontSize: 14 * SizeConfig.textMultiplier!,
-                                color: black3E,
-                            ),
-                          ))),
+                          child:  Text(
+                        'Forgot your password?',
+                        style: AppTextStyle1.normalGreyTTCommon400.copyWith(
+                          fontSize: 14 * SizeConfig.textMultiplier!,
+                          color: black3E,
+                        ),
+                      ))),
                 ],
               ),
             ),
