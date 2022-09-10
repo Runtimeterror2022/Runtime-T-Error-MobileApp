@@ -92,26 +92,14 @@ class _ClientsListScreenState extends State<ClientsListScreen> {
                 physics: const BouncingScrollPhysics(),
                 itemCount: _employee.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => DeveloperProfileScreen(
-                                  _employee[index]['name'],
-                                  _employee[index]['tech_stack'],
-                                  _employee[index]['experience'],
-                                )),
-                      );
-                    },
-                    child: ClientInfoCard(
-                      name: _employee[index]['name'],
-                      projectName: _employee[index]['experience'],
-                      companyName: _employee[index]['tech_stack'],
-                      hasDeveloper: _employee[index]['isAvailable'],
-                      developerName: "Himank bro",
-                      developerTech: "flutter",
-                    ),
+                  return ClientInfoCard(
+                    name: _employee[index]['name'],
+                    projectName: _employee[index]['experience'],
+                    companyName: _employee[index]['tech_stack'],
+                    hasDeveloper: _employee[index]['isAvailable'],
+                    developerName: "Himank bro",
+                    developerTech: "flutter",
+                    onPressed: () {},
                   );
                 },
               ),
