@@ -4,12 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:mvc_bolierplate_getx/core/constants/color_palette.dart';
 import 'package:mvc_bolierplate_getx/feature/bottom_navigation_bar/view/bottom_navigation_bar_screen.dart';
-import 'package:mvc_bolierplate_getx/feature/home/view/home.dart';
-import 'package:mvc_bolierplate_getx/feature/log_in/view/login_screen.dart';
 
-import 'core/constants/image_path.dart';
 import 'core/reponsive/SizeConfig.dart';
-import 'core/routes/app_routes.dart';
 
 class MyApp extends StatelessWidget {
   // final AppTranslations translations;
@@ -31,8 +27,26 @@ class MyApp extends StatelessWidget {
                   DeviceOrientation.portraitUp,
                 ]);
                 return GetMaterialApp(
+                  theme: ThemeData(
+                    primarySwatch: Colors.blue,
+                    inputDecorationTheme: InputDecorationTheme(
+                        enabledBorder: OutlineInputBorder(
+                          borderSide:
+                              const BorderSide(color: AppColors.kborder),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide:
+                              const BorderSide(color: AppColors.kborder),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        prefixIconColor: AppColors.kgrey,
+                        labelStyle: const TextStyle(color: AppColors.kgrey),
+                        focusColor: AppColors.kgrey),
+                  ),
+                  debugShowCheckedModeBanner: false,
                   title: 'MyApp',
-                  home: CustomBottomNavigationBar(),
+                  home: const CustomBottomNavigationBar(),
                 );
               })));
 }
