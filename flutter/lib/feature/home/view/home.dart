@@ -13,13 +13,38 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final TextEditingController _searchCtrl = TextEditingController();
+  final List<Map<String, dynamic>> _employee = [
+    {
+      'name': 'Himank Maheshwari',
+      'experience': '3.0',
+      'tech_stack': 'Flutter Developer',
+      'isAvailable': 'true',
+    },
+    {
+      'name': 'Divya Gupta',
+      'experience': '2.0',
+      'tech_stack': 'Python Developer',
+      'isAvailable': 'false',
+    },
+    {
+      'name': 'Kashif Ahmad',
+      'experience': '2.5',
+      'tech_stack': 'Flutter Developer',
+      'isAvailable': 'false',
+    },
+    {
+      'name': 'Rana Atul',
+      'experience': '4.0',
+      'tech_stack': 'Python Developer',
+      'isAvailable': 'true',
+    },
+  ];
   @override
   void initState() {
     super.initState();
   }
 
   @override
-  // ignore: prefer_expression_function_bodies
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -52,17 +77,31 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          employeeCard('', '', ''),
+          Expanded(
+            child: ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              itemCount: _employee.length,
+              itemBuilder: (BuildContext context, int index) {
+                return employeeCard(
+                  _employee[index]['name'],
+                  _employee[index]['experience'],
+                  _employee[index]['tech_stack'],
+                  _employee[index]['isAvailable'],
+                );
+              },
+            ),
+          ),
         ],
       ),
     );
   }
 
   // ignore: prefer_expression_function_bodies
-  Widget employeeCard(String name, String experience, String techStack) {
+  Widget employeeCard(
+      String name, String experience, String techStack, String isAvailable) {
     return Container(
       height: MediaQuery.of(context).size.height * .14,
-      margin: const EdgeInsets.all(15),
+      margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
           border: Border.all(
@@ -84,20 +123,35 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Text(name, style: AppTextStyle.blackBold14),
                     const SizedBox(width: 8),
-                    Container(
-                      padding: const EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                          color: AppColors.kactiveBackground,
-                          border: Border.all(
-                            color: AppColors.ktransparent,
+                    (isAvailable == 'true')
+                        ? Container(
+                            padding: const EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                                color: AppColors.kactiveBackground,
+                                border: Border.all(
+                                  color: AppColors.ktransparent,
+                                ),
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(8))),
+                            child: Text(
+                              'Available',
+                              style: AppTextStyle.activeregular10,
+                            ),
+                          )
+                        : Container(
+                            padding: const EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                                color: AppColors.kinActiveBackground,
+                                border: Border.all(
+                                  color: AppColors.ktransparent,
+                                ),
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(8))),
+                            child: Text(
+                              'Engaged',
+                              style: AppTextStyle.inActiveregular10,
+                            ),
                           ),
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(8))),
-                      child: Text(
-                        'Available',
-                        style: AppTextStyle.activeregular10,
-                      ),
-                    ),
                   ],
                 ),
                 const SizedBox(height: 5),
@@ -107,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  experience,
+                  'Experience - $experience Years',
                   style: AppTextStyle.grey300Regular10,
                 ),
               ],
