@@ -167,3 +167,10 @@ android/app/src/production/google-services.json
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 flutter/build/url_launcher_android/intermediates/incremental/mergeDebugJniLibFolders/merger.xml
 flutter/build/url_launcher_android/intermediates/incremental/mergeDebugJniLibFolders/merger.xml
+flutter/build/app/outputs/flutter-apk/app.apk.sha1
+flutter/build/app/outputs/flutter-apk/app.apk.sha1
+flutter/build/app/outputs/flutter-apk/app.apk.sha1
+flutter/build/app/outputs/flutter-apk/app.apk
+flutter/build/app/outputs/flutter-apk/app-debug.apk
+flutter/build/app/outputs/apk/debug/app-debug.apk
+flutter/build/app/outputs/flutter-apk/app.apk
