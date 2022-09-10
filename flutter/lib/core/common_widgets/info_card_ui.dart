@@ -34,6 +34,7 @@ class DeveloperInfoCard extends StatelessWidget {
           vertical: 5 * SizeConfig.heightMultiplier!),
       child: ElevatedButton(
         style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.transparent),
             padding: MaterialStateProperty.all(EdgeInsets.zero),
             shape: MaterialStateProperty.all(const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(8))))),
@@ -128,9 +129,39 @@ class DeveloperInfoCard extends StatelessWidget {
                           ),
                   ],
                 ),
+                const Spacer(),
+                Container(
+                  child: IconButton(
+                    alignment: Alignment.topCenter,
+                    onPressed: () {
+                      // showModalBottomSheet<void>(
+                      //   context: context,
+                      //   builder: (BuildContext context) {
+                      //     return callTabView();
+                      //   },
+                      // );
+                    },
+                    icon: const Icon(Icons.more_vert),
+                    color: AppColors.kgrey300,
+                  ),
+                )
               ]),
         ),
       ),
     );
   }
+
+  // Widget callTabView() {
+  //   return SizedBox(
+  //     height: 200,
+  //     child: Center(
+  //       child: Column(
+  //         mainAxisAlignment: MainAxisAlignment.center,
+  //         children: const [
+  //           Text('GeeksforGeeks'),
+  //         ],
+  //       ),
+  //     ),
+  //   );
+  // }
 }

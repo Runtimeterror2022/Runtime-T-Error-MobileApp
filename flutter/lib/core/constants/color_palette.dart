@@ -15,6 +15,7 @@ abstract class AppColors {
   static const kinActiveText = Color(0xFFEF4444);
   static const kprimary = Color(0xFFf5f5f5);
   static const ksecondary = Color(0xFF242424);
+  static const kbuttonColor = Color(0xFF242424);
 
   static const ktransparent = Colors.transparent;
   static const kYellow = Color(0xFFFFB823);

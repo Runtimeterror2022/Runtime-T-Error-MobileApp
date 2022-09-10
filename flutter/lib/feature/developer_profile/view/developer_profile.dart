@@ -8,8 +8,8 @@ class DeveloperProfileScreen extends StatefulWidget {
   String name;
   String techStack;
   String experience;
-  DeveloperProfileScreen(this.name, this.techStack, this.experience, {Key? key})
-      : super(key: key);
+  // ignore: sort_constructors_first
+  DeveloperProfileScreen(this.name, this.techStack, this.experience);
 
   @override
   State<DeveloperProfileScreen> createState() => _DeveloperProfileScreenState();
@@ -90,7 +90,18 @@ class _DeveloperProfileScreenState extends State<DeveloperProfileScreen> {
                       fontWeight: FontWeight.w500),
                 ),
               ),
-              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text('Previous Calls'),
+                  ),
+                  TextButton(
+                      onPressed: () {}, child: const Text('Upcoming Calls'))
+                ],
+              ),
+              // const SizedBox(height: 20),
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 20),
                 child: const Divider(
