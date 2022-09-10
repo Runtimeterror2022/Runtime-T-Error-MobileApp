@@ -56,4 +56,9 @@ abstract class AppTextStyle {
     fontWeight: FontWeight.w400,
     color: AppColors.kactiveText,
   );
+  static TextStyle inActiveregular10 = GoogleFonts.montserrat(
+    fontSize: 10 * SizeConfig.textMultiplier!,
+    fontWeight: FontWeight.w400,
+    color: AppColors.kinActiveText,
+  );
 }
