@@ -17,7 +17,6 @@ class DeveloperProfileScreen extends StatefulWidget {
 
 class _DeveloperProfileScreenState extends State<DeveloperProfileScreen> {
   @override
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -93,7 +92,7 @@ class _DeveloperProfileScreenState extends State<DeveloperProfileScreen> {
               ),
               const SizedBox(height: 20),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 20),
+                margin: const EdgeInsets.symmetric(horizontal: 20),
                 child: const Divider(
                   color: AppColors.kgrey300,
                 ),
