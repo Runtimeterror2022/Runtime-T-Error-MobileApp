@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+
+
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+
 import 'package:mvc_bolierplate_getx/core/common_widgets/info_card_ui.dart';
 import 'package:mvc_bolierplate_getx/core/constants/app_text_style.dart';
-import 'package:mvc_bolierplate_getx/core/constants/color_palette.dart';
-import 'package:mvc_bolierplate_getx/core/constants/image_path.dart';
-import 'package:mvc_bolierplate_getx/core/routes/app_routes.dart';
 import 'package:mvc_bolierplate_getx/feature/developer_profile/view/developer_profile.dart';
 import 'package:mvc_bolierplate_getx/feature/home/controller/home_controller.dart';
 
@@ -108,6 +108,7 @@ class _HomePageState extends State<HomePage> {
             )
           ],
         ),
+       
       ),
     );
   }

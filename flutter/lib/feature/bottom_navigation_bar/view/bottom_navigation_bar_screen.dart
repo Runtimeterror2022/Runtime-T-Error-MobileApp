@@ -6,6 +6,8 @@ import 'package:mvc_bolierplate_getx/core/reponsive/SizeConfig.dart';
 import 'package:mvc_bolierplate_getx/feature/client_screen/view/clients_list_screen.dart';
 import 'package:mvc_bolierplate_getx/feature/home/view/home.dart';
 import 'package:mvc_bolierplate_getx/feature/log_in/view/login_screen.dart';
+import 'package:mvc_bolierplate_getx/feature/schedule_call/view/schedule_call.dart';
+import 'package:mvc_bolierplate_getx/feature/setting/view/setting.dart';
 
 TabController? homeTabController;
 
@@ -68,7 +70,12 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar>
               physics: const NeverScrollableScrollPhysics(),
               controller: pageController,
               //list of pages to navigate through bottom navigation bar
-              children: const [HomePage(), ClientsListScreen()],
+              children: const [
+                HomePage(),
+                ClientsListScreen(),
+                ScheduleCall(),
+                Setting()
+              ],
             )),
         bottomNavigationBar: Container(
           height: 64 * SizeConfig.heightMultiplier!,
