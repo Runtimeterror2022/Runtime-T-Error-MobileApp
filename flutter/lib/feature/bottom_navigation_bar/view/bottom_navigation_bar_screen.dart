@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:mvc_bolierplate_getx/core/constants/image_path.dart';
 import 'package:mvc_bolierplate_getx/core/reponsive/SizeConfig.dart';
+import 'package:mvc_bolierplate_getx/feature/client_screen/view/clients_list_screen.dart';
 import 'package:mvc_bolierplate_getx/feature/home/view/home.dart';
 import 'package:mvc_bolierplate_getx/feature/log_in/view/login_screen.dart';
 
@@ -67,7 +68,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar>
               physics: const NeverScrollableScrollPhysics(),
               controller: pageController,
               //list of pages to navigate through bottom navigation bar
-              children: [HomePage()],
+              children: const [HomePage(), ClientsListScreen()],
             )),
         bottomNavigationBar: Container(
           height: 64 * SizeConfig.heightMultiplier!,
