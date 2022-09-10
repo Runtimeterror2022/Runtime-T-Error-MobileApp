@@ -13,10 +13,11 @@ abstract class AppColors {
   static const kinActiveBackground = Color(0xFFFDECEC);
   static const kinActiveText = Color(0xFFEF4444);
   static const ktransparent = Colors.transparent;
+  static const kYellow = Color(0xFFFFB823);
 }
 
-// primary:#F5F5F5, 
-//  secondary: #242424,  
+// primary:#F5F5F5,
+//  secondary: #242424,
 //  cta: #009688,
-//   active:{bg:#E7F6E6, text:#0BA700}, 
+//   active:{bg:#E7F6E6, text:#0BA700},
 //   inactive:{bg:#FDECEC, text:#EF4444}
