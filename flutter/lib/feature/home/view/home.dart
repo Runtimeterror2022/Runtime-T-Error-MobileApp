@@ -3,6 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mvc_bolierplate_getx/core/constants/app_text_style.dart';
 import 'package:mvc_bolierplate_getx/core/constants/color_palette.dart';
 import 'package:mvc_bolierplate_getx/core/constants/image_path.dart';
+import 'package:mvc_bolierplate_getx/core/routes/app_routes.dart';
+import 'package:mvc_bolierplate_getx/feature/developer_profile/view/developer_profile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,29 +18,36 @@ class _HomePageState extends State<HomePage> {
   final List<Map<String, dynamic>> _employee = [
     {
       'name': 'Himank Maheshwari',
-      'experience': '3.0',
+      'experience': '3',
       'tech_stack': 'Flutter Developer',
-      'isAvailable': 'true',
+      'isAvailable': true,
     },
     {
       'name': 'Divya Gupta',
-      'experience': '2.0',
+      'experience': '2',
       'tech_stack': 'Python Developer',
-      'isAvailable': 'false',
+      'isAvailable': false,
     },
     {
       'name': 'Kashif Ahmad',
       'experience': '2.5',
       'tech_stack': 'Flutter Developer',
-      'isAvailable': 'false',
+      'isAvailable': false,
     },
     {
       'name': 'Rana Atul',
-      'experience': '4.0',
+      'experience': '4',
       'tech_stack': 'Python Developer',
-      'isAvailable': 'true',
+      'isAvailable': true,
+    },
+    {
+      'name': 'Aditya Arya',
+      'experience': '6',
+      'tech_stack': 'Software Developer',
+      'isAvailable': false,
     },
   ];
+
   @override
   void initState() {
     super.initState();
@@ -46,68 +55,77 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).requestFocus(FocusNode());
+      },
+      child: Scaffold(
+        backgroundColor: Colors.grey.shade50,
+        appBar: AppBar(
           backgroundColor: Colors.white,
-          leading: const Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
-          ),
           title: Text(
-            'Employee',
+            'Dashboard',
             style: AppTextStyle.titleBlackMedium18,
           ),
-          actions: const []),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height * .02,
-          ),
-          Container(
-            margin: const EdgeInsets.all(20),
-            child: TextField(
-              controller: _searchCtrl,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(color: AppColors.kborder),
-                ),
-                labelText: 'Search',
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height * .02,
+            ),
+            Container(
+              margin: const EdgeInsets.all(10),
+              child: TextField(
+                controller: _searchCtrl,
+                decoration: const InputDecoration(
+                    labelText: 'Search', prefixIcon: Icon(Icons.search)),
               ),
             ),
-          ),
-          Expanded(
-            child: ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              itemCount: _employee.length,
-              itemBuilder: (BuildContext context, int index) {
-                return employeeCard(
-                  _employee[index]['name'],
-                  _employee[index]['experience'],
-                  _employee[index]['tech_stack'],
-                  _employee[index]['isAvailable'],
-                );
-              },
+            Expanded(
+              child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                itemCount: _employee.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DeveloperProfileScreen(
+                                  _employee[index]['name'],
+                                  _employee[index]['tech_stack'],
+                                  _employee[index]['experience'],
+                                )),
+                      );
+                    },
+                    child: employeeCard(
+                      _employee[index]['name'],
+                      _employee[index]['experience'],
+                      _employee[index]['tech_stack'],
+                      _employee[index]['isAvailable'],
+                    ),
+                  );
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 
   // ignore: prefer_expression_function_bodies
   Widget employeeCard(
-      String name, String experience, String techStack, String isAvailable) {
+      String name, String experience, String techStack, bool isAvailable) {
     return Container(
       height: MediaQuery.of(context).size.height * .14,
       margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-          border: Border.all(
-            color: AppColors.kborder,
-          ),
-          borderRadius: const BorderRadius.all(Radius.circular(8))),
+      decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(8))),
       child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,7 +141,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Text(name, style: AppTextStyle.blackBold14),
                     const SizedBox(width: 8),
-                    (isAvailable == 'true')
+                    (isAvailable)
                         ? Container(
                             padding: const EdgeInsets.all(5),
                             decoration: BoxDecoration(
