@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
                     "source": "/Users/antino/.gradle/caches/transforms-3/52fde5186cb08d3efcbba20a15c02c66/transformed/fragment-1.3.0/res/values/values.xml",
@@ -61,6 +61,23 @@
                     }
                 },
                 {
+                    "source": "/Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_crashlytics/intermediates/packaged_res/debug/values/values.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "60",
+                        "endOffsets": "111"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1025",
+                        "endColumns": "60",
+                        "endOffsets": "1081"
+                    }
+                },
+                {
                     "source": "/Users/antino/.gradle/caches/transforms-3/a2dafb1acc68216a9a39c0a012d06148/transformed/jetified-facebook-login-14.1.0/res/values/values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,38,51",
@@ -77,25 +94,6 @@
                         "endLines": "200,210,211,212,358,359,360,361,362,363,364,365,366,367,368,369,370,371,372,373,374,375,376,377,378,379,380,1969,1977,3678,3687",
                         "endColumns": "69,81,82,80,136,114,117,94,64,67,57,71,71,96,90,73,73,112,100,62,219,164,76,81,124,85,123,85,12,24,24",
                         "endOffsets": "13578,14297,14380,14461,23618,23733,23851,23946,24011,24079,24137,24209,24281,24378,24469,24543,24617,24730,24831,24894,25114,25279,25356,25438,25563,25649,25773,135099,135477,227785,228206"
-                    }
-                },
-                {
-                    "source": "/Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/android/app/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "3,14",
-                        "startColumns": "4,4",
-                        "startOffsets": "173,818",
-                        "endLines": "7,16",
-                        "endColumns": "12,12",
-                        "endOffsets": "476,982"
-                    },
-                    "to": {
-                        "startLines": "1491,1496",
-                        "startColumns": "4,4",
-                        "startOffsets": "98472,98780",
-                        "endLines": "1495,1498",
-                        "endColumns": "12,12",
-                        "endOffsets": "98775,98944"
                     }
                 },
                 {
@@ -151,6 +149,25 @@
                         "startOffsets": "28111",
                         "endColumns": "81",
                         "endOffsets": "28188"
+                    }
+                },
+                {
+                    "source": "/Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/android/app/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "173,818",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "476,982"
+                    },
+                    "to": {
+                        "startLines": "1491,1496",
+                        "startColumns": "4,4",
+                        "startOffsets": "98472,98780",
+                        "endLines": "1495,1498",
+                        "endColumns": "12,12",
+                        "endOffsets": "98775,98944"
                     }
                 },
                 {
@@ -223,23 +240,6 @@
                         "endLines": "12,13,14,15,295,2102,2106,3367,3384,3392",
                         "endColumns": "11,59,51,44,59,24,24,24,24,24",
                         "endOffsets": "646,706,758,803,19764,142811,143008,210208,211322,211715"
-                    }
-                },
-                {
-                    "source": "/Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_crashlytics/intermediates/packaged_res/debug/values/values.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "60",
-                        "endOffsets": "111"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "1025",
-                        "endColumns": "60",
-                        "endOffsets": "1081"
                     }
                 },
                 {

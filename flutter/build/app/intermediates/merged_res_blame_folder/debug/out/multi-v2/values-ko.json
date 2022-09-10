@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-ko/values-ko.xml",
+            "outputFile": "/Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-ko/values-ko.xml",
             "map": [
                 {
                     "source": "/Users/antino/.gradle/caches/transforms-3/a2dafb1acc68216a9a39c0a012d06148/transformed/jetified-facebook-login-14.1.0/res/values-ko/values-ko.xml",

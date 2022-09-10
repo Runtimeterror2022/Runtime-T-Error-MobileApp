@@ -13,23 +13,23 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->/Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/android/app/src/debug/AndroidManifest.xml:7:5-66
-15-->/Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/android/app/src/debug/AndroidManifest.xml:7:22-64
+15-->/Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/android/app/src/debug/AndroidManifest.xml:7:5-66
+15-->/Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/android/app/src/debug/AndroidManifest.xml:7:22-64
 16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-16-->[:firebase_analytics] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_analytics/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-79
-16-->[:firebase_analytics] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_analytics/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-76
+16-->[:firebase_analytics] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_analytics/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-79
+16-->[:firebase_analytics] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_analytics/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-76
 17    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Permissions options for the `notification` group -->
-17-->[:firebase_analytics] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_analytics/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-68
-17-->[:firebase_analytics] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_analytics/intermediates/merged_manifest/debug/AndroidManifest.xml:11:22-65
+17-->[:firebase_analytics] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_analytics/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-68
+17-->[:firebase_analytics] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_analytics/intermediates/merged_manifest/debug/AndroidManifest.xml:11:22-65
 18    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-18-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-77
-18-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:13:22-74
+18-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-77
+18-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:13:22-74
 19    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-19-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-81
-19-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-78
+19-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-81
+19-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-78
 20    <uses-permission android:name="android.permission.VIBRATE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-20-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-66
-20-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-63
+20-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-66
+20-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-63
 21    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 21-->[com.google.firebase:firebase-messaging:23.0.7] /Users/antino/.gradle/caches/transforms-3/23f093aa7232c018acb371e3c7ad04c1/transformed/jetified-firebase-messaging-23.0.7/AndroidManifest.xml:29:5-82
 21-->[com.google.firebase:firebase-messaging:23.0.7] /Users/antino/.gradle/caches/transforms-3/23f093aa7232c018acb371e3c7ad04c1/transformed/jetified-firebase-messaging-23.0.7/AndroidManifest.xml:29:22-79
@@ -136,43 +136,43 @@
 84            android:value="2" />
 85
 86        <service
-86-->[:firebase_crashlytics] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_crashlytics/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
+86-->[:firebase_crashlytics] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_crashlytics/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
 87            android:name="com.google.firebase.components.ComponentDiscoveryService"
-87-->[:firebase_crashlytics] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_crashlytics/intermediates/merged_manifest/debug/AndroidManifest.xml:10:18-89
+87-->[:firebase_crashlytics] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_crashlytics/intermediates/merged_manifest/debug/AndroidManifest.xml:10:18-89
 88            android:directBootAware="true"
 88-->[com.google.firebase:firebase-common:20.1.1] /Users/antino/.gradle/caches/transforms-3/5882a8c0218fa297639de0cab1596f65/transformed/jetified-firebase-common-20.1.1/AndroidManifest.xml:35:13-43
 89            android:exported="false" >
 89-->[com.google.firebase:firebase-crashlytics:18.2.12] /Users/antino/.gradle/caches/transforms-3/07754e5bf32321770b1927853071ec37/transformed/jetified-firebase-crashlytics-18.2.12/AndroidManifest.xml:17:13-37
 90            <meta-data
-90-->[:firebase_crashlytics] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_crashlytics/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+90-->[:firebase_crashlytics] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_crashlytics/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
 91                android:name="com.google.firebase.components:io.flutter.plugins.firebase.crashlytics.FlutterFirebaseAppRegistrar"
-91-->[:firebase_crashlytics] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_crashlytics/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-130
+91-->[:firebase_crashlytics] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_crashlytics/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-130
 92                android:value="com.google.firebase.components.ComponentRegistrar" />
-92-->[:firebase_crashlytics] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_crashlytics/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+92-->[:firebase_crashlytics] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_crashlytics/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
 93            <meta-data
-93-->[:firebase_analytics] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_analytics/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:85
+93-->[:firebase_analytics] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_analytics/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:85
 94                android:name="com.google.firebase.components:io.flutter.plugins.firebase.analytics.FlutterFirebaseAppRegistrar"
-94-->[:firebase_analytics] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_analytics/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-128
+94-->[:firebase_analytics] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_analytics/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-128
 95                android:value="com.google.firebase.components.ComponentRegistrar" />
-95-->[:firebase_analytics] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_analytics/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-82
+95-->[:firebase_analytics] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_analytics/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-82
 96            <meta-data
-96-->[:firebase_remote_config] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_remote_config/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+96-->[:firebase_remote_config] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_remote_config/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
 97                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firebaseremoteconfig.FlutterFirebaseAppRegistrar"
-97-->[:firebase_remote_config] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_remote_config/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-139
+97-->[:firebase_remote_config] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_remote_config/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-139
 98                android:value="com.google.firebase.components.ComponentRegistrar" />
-98-->[:firebase_remote_config] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_remote_config/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+98-->[:firebase_remote_config] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_remote_config/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
 99            <meta-data
-99-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-40:85
+99-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-40:85
 100                android:name="com.google.firebase.components:io.flutter.plugins.firebase.messaging.FlutterFirebaseAppRegistrar"
-100-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:39:17-128
+100-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:39:17-128
 101                android:value="com.google.firebase.components.ComponentRegistrar" />
-101-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:40:17-82
+101-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:40:17-82
 102            <meta-data
-102-->[:firebase_core] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+102-->[:firebase_core] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
 103                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-103-->[:firebase_core] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-124
+103-->[:firebase_core] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-124
 104                android:value="com.google.firebase.components.ComponentRegistrar" />
-104-->[:firebase_core] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+104-->[:firebase_core] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
 105            <meta-data
 105-->[com.google.firebase:firebase-crashlytics:18.2.12] /Users/antino/.gradle/caches/transforms-3/07754e5bf32321770b1927853071ec37/transformed/jetified-firebase-crashlytics-18.2.12/AndroidManifest.xml:18:13-20:85
 106                android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar"
@@ -217,113 +217,113 @@
 125-->[com.google.firebase:firebase-abt:21.0.1] /Users/antino/.gradle/caches/transforms-3/f06cdfe44779adbfda23d629111e147a/transformed/jetified-firebase-abt-21.0.1/AndroidManifest.xml:15:17-82
 126        </service>
 127        <service
-127-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-19:72
+127-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-19:72
 128            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingBackgroundService"
-128-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-107
+128-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-107
 129            android:exported="false"
-129-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-37
+129-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-37
 130            android:permission="android.permission.BIND_JOB_SERVICE" />
-130-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-69
+130-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-69
 131        <service
-131-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:20:9-26:19
+131-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:20:9-26:19
 132            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingService"
-132-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-97
+132-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-97
 133            android:exported="false" >
-133-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-37
+133-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-37
 134            <intent-filter>
-134-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:29
+134-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:29
 135                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-135-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-78
-135-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:24:25-75
+135-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-78
+135-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:24:25-75
 136            </intent-filter>
 137        </service>
 138
 139        <receiver
-139-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-35:20
+139-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-35:20
 140            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingReceiver"
-140-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-98
+140-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-98
 141            android:exported="true"
-141-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-36
+141-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-36
 142            android:permission="com.google.android.c2dm.permission.SEND" >
-142-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:31:13-73
+142-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:31:13-73
 143            <intent-filter>
-143-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:32:13-34:29
+143-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:32:13-34:29
 144                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-144-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:33:17-81
-144-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:33:25-78
+144-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:33:17-81
+144-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:33:25-78
 145            </intent-filter>
 146        </receiver>
 147
 148        <provider
-148-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:43:9-47:38
+148-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:43:9-47:38
 149            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingInitProvider"
-149-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:44:13-102
+149-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:44:13-102
 150            android:authorities="com.example.mvc_bolierplate_getx.flutterfirebasemessaginginitprovider"
-150-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:45:13-88
+150-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:45:13-88
 151            android:exported="false"
-151-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:46:13-37
+151-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:46:13-37
 152            android:initOrder="99" />
-152-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:47:13-35
+152-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:47:13-35
 153
 154        <receiver
-154-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:13:9-15:40
+154-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:13:9-15:40
 155            android:name="me.carda.awesome_notifications.notifications.broadcastReceivers.DismissedNotificationReceiver"
-155-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-121
+155-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-121
 156            android:exported="false" />
-156-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-37
+156-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-37
 157        <receiver
-157-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-18:40
+157-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-18:40
 158            android:name="me.carda.awesome_notifications.notifications.broadcastReceivers.ScheduledNotificationReceiver"
-158-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-121
+158-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-121
 159            android:exported="false" />
-159-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-37
+159-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-37
 160        <receiver
-160-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:19:9-21:40
+160-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:19:9-21:40
 161            android:name="me.carda.awesome_notifications.notifications.broadcastReceivers.KeepOnTopActionReceiver"
-161-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-115
+161-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-115
 162            android:exported="false" />
-162-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-37
+162-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-37
 163        <receiver
-163-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:22:9-35:20
+163-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:22:9-35:20
 164            android:name="me.carda.awesome_notifications.notifications.broadcastReceivers.RefreshSchedulesReceiver"
-164-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-116
+164-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-116
 165            android:exported="false" >
-165-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-37
+165-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-37
 166            <intent-filter>
-166-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:25:13-34:29
+166-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:25:13-34:29
 167                <category android:name="android.intent.category.DEFAULT" />
-167-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:26:17-76
-167-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:26:27-73
+167-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:26:17-76
+167-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:26:27-73
 168
 169                <action android:name="android.intent.action.BOOT_COMPLETED" />
-169-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:28:17-79
-169-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:28:25-76
+169-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:28:17-79
+169-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:28:25-76
 170                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
-170-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:29:17-86
-170-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:29:25-83
+170-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:29:17-86
+170-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:29:25-83
 171                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
-171-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:30:17-84
-171-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:30:25-81
+171-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:30:17-84
+171-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:30:25-81
 172                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-172-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:31:17-82
-172-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:31:25-79
+172-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:31:17-82
+172-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:31:25-79
 173                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
-173-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:32:17-82
-173-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:32:25-79
+173-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:32:17-82
+173-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:32:25-79
 174                <action android:name="android.app.action.SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED" />
-174-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:33:17-107
-174-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:33:25-104
+174-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:33:17-107
+174-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:33:25-104
 175            </intent-filter>
 176        </receiver>
 177
 178        <activity
-178-->[:url_launcher_android] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-13:74
+178-->[:url_launcher_android] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-13:74
 179            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
-179-->[:url_launcher_android] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-74
+179-->[:url_launcher_android] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-74
 180            android:exported="false"
-180-->[:url_launcher_android] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-37
+180-->[:url_launcher_android] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-37
 181            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-181-->[:url_launcher_android] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-71
+181-->[:url_launcher_android] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-71
 182
 183        <uses-library
 183-->[androidx.window:window:1.0.0-beta04] /Users/antino/.gradle/caches/transforms-3/992c409fa2324ef5eeb324c08fe7ed56/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
@@ -347,10 +347,10 @@
 193            android:permission="com.google.android.c2dm.permission.SEND" >
 193-->[com.google.firebase:firebase-messaging:23.0.7] /Users/antino/.gradle/caches/transforms-3/23f093aa7232c018acb371e3c7ad04c1/transformed/jetified-firebase-messaging-23.0.7/AndroidManifest.xml:35:13-73
 194            <intent-filter>
-194-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:32:13-34:29
+194-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:32:13-34:29
 195                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-195-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:33:17-81
-195-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:33:25-78
+195-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:33:17-81
+195-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:33:25-78
 196            </intent-filter>
 197        </receiver>
 198        <!--
@@ -366,10 +366,10 @@
 205            android:exported="false" >
 205-->[com.google.firebase:firebase-messaging:23.0.7] /Users/antino/.gradle/caches/transforms-3/23f093aa7232c018acb371e3c7ad04c1/transformed/jetified-firebase-messaging-23.0.7/AndroidManifest.xml:48:13-37
 206            <intent-filter android:priority="-500" >
-206-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:29
+206-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:29
 207                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-207-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-78
-207-->[:firebase_messaging] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:24:25-75
+207-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-78
+207-->[:firebase_messaging] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:24:25-75
 208            </intent-filter>
 209        </service>
 210        <service
@@ -439,8 +439,8 @@
 243-->[com.facebook.android:facebook-common:14.1.0] /Users/antino/.gradle/caches/transforms-3/736ff115fe72d5cadba025c2b997b371/transformed/jetified-facebook-common-14.1.0/AndroidManifest.xml:40:25-66
 244
 245                <category android:name="android.intent.category.DEFAULT" />
-245-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:26:17-76
-245-->[:awesome_notifications] /Users/antino/Documents/GitHub/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:26:27-73
+245-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:26:17-76
+245-->[:awesome_notifications] /Users/antino/Desktop/Runtime-T-Error-MobileApp/flutter/build/awesome_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:26:27-73
 246                <category android:name="android.intent.category.BROWSABLE" />
 246-->[com.facebook.android:facebook-common:14.1.0] /Users/antino/.gradle/caches/transforms-3/736ff115fe72d5cadba025c2b997b371/transformed/jetified-facebook-common-14.1.0/AndroidManifest.xml:43:17-78
 246-->[com.facebook.android:facebook-common:14.1.0] /Users/antino/.gradle/caches/transforms-3/736ff115fe72d5cadba025c2b997b371/transformed/jetified-facebook-common-14.1.0/AndroidManifest.xml:43:27-75
