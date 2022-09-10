@@ -14,6 +14,7 @@ abstract class AppColors {
   static const kprimary = Color(0xFFf5f5f5);
   static const ksecondary = Color(0xFF242424);
   static const ktransparent = Colors.transparent;
+  static const kYellow = Color(0xFFFFB823);
 }
 
 const black3E = Color(0xff3E3E3E);
@@ -41,3 +42,4 @@ const blue235 = Color.fromARGB(255, 229, 235, 245);
 const black44 = Color.fromARGB(255, 44, 44, 44);
 const blue97 = Color.fromARGB(255, 97, 152, 235);
 const splashColor229 = Color.fromARGB(255, 229, 235, 245);
+

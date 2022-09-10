@@ -25,6 +25,7 @@ dependencies:
   random_avatar: ^0.0.7
   dropdown_button2: ^1.6.3
 
+
 dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:
