@@ -16,7 +16,7 @@ abstract class AppColors {
   static const kprimary = Color(0xFFf5f5f5);
   static const ksecondary = Color(0xFF242424);
   static const kButtonColor = Color(
-    0xFF009688,
+    0xff242424,
   );
 
   static const ktransparent = Colors.transparent;
