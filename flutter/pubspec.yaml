@@ -24,12 +24,19 @@ dependencies:
   url_launcher: ^6.1.5
   random_avatar: ^0.0.7
   dropdown_button2: ^1.6.3
+  flutter_launcher_icons: ^0.10.0
+  lottie: ^1.4.2
 
 
 dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/app-icon.png"
 
 flutter:
   uses-material-design: true

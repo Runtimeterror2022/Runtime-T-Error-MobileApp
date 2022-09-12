@@ -48,18 +48,6 @@ class _ClientsListScreenState extends State<ClientsListScreen> {
     },
   ];
 
-  // Initial Selected Value
-  String dropdownvalue = 'Previous Calls';
-
-  // List of items in our dropdown menu
-  var items = [
-    'Previous Calls',
-    'Upcoming Calls',
-    'Item 3',
-    'Item 4',
-    'Item 5',
-  ];
-
   @override
   void initState() {
     super.initState();
@@ -74,6 +62,7 @@ class _ClientsListScreenState extends State<ClientsListScreen> {
       child: Scaffold(
         backgroundColor: Colors.grey.shade50,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Colors.white,
           title: Text(
             'Clients',

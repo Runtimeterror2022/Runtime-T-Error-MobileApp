@@ -5,6 +5,7 @@ final GlobalKey<ScaffoldMessengerState> snackbarKey =
 
 abstract class ImagePath {
   static const String googleIcon = 'assets/google-icon.svg';
+  static const String scheduleLottieIcon = 'assets/lottie/video_call.json';
   static const String appLogo = 'assets/app-logo.svg';
   static const String userIcon = 'assets/profile.svg';
   static const String scheduleMeetingIcon =
