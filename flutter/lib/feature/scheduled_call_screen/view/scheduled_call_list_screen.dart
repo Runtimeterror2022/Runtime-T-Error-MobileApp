@@ -49,6 +49,7 @@ class ScheduledCallsListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    _listOfCalls.shuffle();
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).requestFocus(FocusNode());
