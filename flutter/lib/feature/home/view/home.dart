@@ -19,6 +19,38 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final TextEditingController _searchCtrl = TextEditingController();
   final HomeController _homeController = Get.put(HomeController());
+  final List<Map<String, dynamic>> _employee = [
+    {
+      'name': 'Himank Maheshwari',
+      'experience': '3',
+      'tech_stack': 'Flutter Developer',
+      'isAvailable': true,
+    },
+    {
+      'name': 'Divya Gupta',
+      'experience': '2',
+      'tech_stack': 'Python Developer',
+      'isAvailable': false,
+    },
+    {
+      'name': 'Kashif Ahmad',
+      'experience': '2.5',
+      'tech_stack': 'Flutter Developer',
+      'isAvailable': false,
+    },
+    {
+      'name': 'Rana Atul',
+      'experience': '4',
+      'tech_stack': 'Python Developer',
+      'isAvailable': true,
+    },
+    {
+      'name': 'Aditya Arya',
+      'experience': '6',
+      'tech_stack': 'Software Developer',
+      'isAvailable': false,
+    },
+  ];
 
   @override
   void initState() {
@@ -57,7 +89,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Obx(
-              () => _homeController.isAllDeveloperLoading.value
+              () => _homeController.isAllDeveloperLoading.value && false
                   ? const Expanded(
                       child: Center(
                         child: CircularProgressIndicator(),
@@ -66,21 +98,13 @@ class _HomePageState extends State<HomePage> {
                   : Expanded(
                       child: ListView.builder(
                         physics: const BouncingScrollPhysics(),
-                        itemCount: _homeController.allDevelopers.length,
+                        itemCount: _employee.length,
                         itemBuilder: (BuildContext context, int index) {
                           return DeveloperInfoCard(
-                            name: _homeController
-                                .allDevelopers[index].developerName!,
-                            experience: _homeController
-                                .allDevelopers[index].yearOfExperience!
-                                .toString(),
-                            techStack: _homeController
-                                .allDevelopers[index].techStack
-                                .toString()
-                                .replaceAll('[', '')
-                                .replaceAll(']', ''),
-                            isAvailable:
-                                _homeController.allDevelopers[index].isEngaged!,
+                            name: _employee[index]['name'],
+                            experience: _employee[index]['experience'],
+                            techStack: _employee[index]['tech_stack'],
+                            isAvailable: _employee[index]['isAvailable'],
                             isClient: false,
                             onPressed: () {
                               Navigator.push(
@@ -88,16 +112,9 @@ class _HomePageState extends State<HomePage> {
                                 MaterialPageRoute(
                                     builder: (context) =>
                                         DeveloperProfileScreen(
-                                          _homeController.allDevelopers[index]
-                                              .developerName!,
-                                          _homeController.allDevelopers[index]
-                                              .yearOfExperience!
-                                              .toString(),
-                                          _homeController
-                                              .allDevelopers[index].techStack
-                                              .toString()
-                                              .replaceAll('[', '')
-                                              .replaceAll(']', ''),
+                                          _employee[index]['name'],
+                                          _employee[index]['tech_stack'],
+                                          _employee[index]['experience'],
                                         )),
                               );
                             },
@@ -105,6 +122,48 @@ class _HomePageState extends State<HomePage> {
                         },
                       ),
                     ),
+              // Expanded(
+              //         child: ListView.builder(
+              //           physics: const BouncingScrollPhysics(),
+              //           itemCount: _homeController.allDevelopers.length,
+              //           itemBuilder: (BuildContext context, int index) {
+              //             return DeveloperInfoCard(
+              //               name: _homeController
+              //                   .allDevelopers[index].developerName!,
+              //               experience: _homeController
+              //                   .allDevelopers[index].yearOfExperience!
+              //                   .toString(),
+              //               techStack: _homeController
+              //                   .allDevelopers[index].techStack
+              //                   .toString()
+              //                   .replaceAll('[', '')
+              //                   .replaceAll(']', ''),
+              //               isAvailable:
+              //                   _homeController.allDevelopers[index].isEngaged!,
+              //               isClient: false,
+              //               onPressed: () {
+              //                 Navigator.push(
+              //                   context,
+              //                   MaterialPageRoute(
+              //                       builder: (context) =>
+              //                           DeveloperProfileScreen(
+              //                             _homeController.allDevelopers[index]
+              //                                 .developerName!,
+              //                             _homeController.allDevelopers[index]
+              //                                 .yearOfExperience!
+              //                                 .toString(),
+              //                             _homeController
+              //                                 .allDevelopers[index].techStack
+              //                                 .toString()
+              //                                 .replaceAll('[', '')
+              //                                 .replaceAll(']', ''),
+              //                           )),
+              //                 );
+              //               },
+              //             );
+              //           },
+              //         ),
+              //       ),
             )
           ],
         ),

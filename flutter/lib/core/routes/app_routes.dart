@@ -16,13 +16,11 @@ class GenerateRoute {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final route = settings.name;
 
-
     if (route == RouteName.sendVerificationScreen) {
       return MaterialPageRoute(
         builder: (BuildContext context) => SendVerificationMailScreen(),
       );
     }
-
     if (route == RouteName.loginScreen) {
       return MaterialPageRoute(
         builder: (
