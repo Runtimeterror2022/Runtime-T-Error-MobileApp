@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
                   ),
                   debugShowCheckedModeBanner: false,
                   title: 'MyApp',
-                  home: LoginScreen(),
+                  home: CustomBottomNavigationBar(),
                 );
               })));
 }

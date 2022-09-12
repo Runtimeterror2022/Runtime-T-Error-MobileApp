@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mvc_bolierplate_getx/core/constants/app_text_style.dart';
 import 'package:mvc_bolierplate_getx/core/constants/color_palette.dart';
 import 'package:mvc_bolierplate_getx/core/reponsive/SizeConfig.dart';
+import 'package:mvc_bolierplate_getx/feature/home/view/calls_for_perticular_developer.dart';
 import 'package:random_avatar/random_avatar.dart';
 
 class DeveloperProfileScreen extends StatefulWidget {
@@ -99,7 +101,13 @@ class _DeveloperProfileScreenState extends State<DeveloperProfileScreen> {
                       backgroundColor: AppColors.kButtonColor,
                       primary: AppColors.kPureWhite,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(CallsForParticularDeveloper(
+                        title: 'Previous Call',
+                        developerName: widget.name,
+                        techStack: widget.techStack,
+                      ));
+                    },
                     child: const Text('Previous Call'),
                   ),
                   SizedBox(
@@ -110,7 +118,11 @@ class _DeveloperProfileScreenState extends State<DeveloperProfileScreen> {
                         backgroundColor: AppColors.kButtonColor,
                         primary: AppColors.kPureWhite,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(CallsForParticularDeveloper(
+                          title: 'Upcoming Call',
+                        ));
+                      },
                       child: const Text('Upcoming Call'))
                 ],
               ),
