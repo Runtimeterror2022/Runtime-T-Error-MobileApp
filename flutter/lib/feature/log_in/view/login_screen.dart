@@ -72,6 +72,7 @@ class LoginScreen extends StatelessWidget {
                             textInputType: TextInputType.emailAddress,
                             isObsecure: false,
                             hint: "Enter your email", label: 'Email address',
+
                           )),
                   SizedBox(
                     height: 24 * SizeConfig.heightMultiplier!,
@@ -88,6 +89,7 @@ class LoginScreen extends StatelessWidget {
                           textInputType: TextInputType.visiblePassword,
                           isObsecure: obSecurePassword.value,
                           hint: "Enter your password",
+                  
                           onSuffixTap: () {
                             obSecurePassword.value = !obSecurePassword.value;
                             logInController.update(['validate-password-text']);
@@ -103,42 +105,47 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(
                     height: 48 * SizeConfig.heightMultiplier!,
                   ),
-
-                  Obx(
-                        ()=>logInController.userClickedOnLoginButton.value
-                            ?Center(
+                  Obx(() => logInController.userClickedOnLoginButton.value
+                      ? Center(
                           child: SizedBox(
                             height: 50 * SizeConfig.heightMultiplier!,
                             width: 50 * SizeConfig.widthMultiplier!,
                             child: Center(
-                                child: Lottie.asset(
-                                    'assets/circular.json')),
+                                child: Lottie.asset('assets/circular.json')),
                           ),
-                        ):
-                        CustomButton(
-                        onPressed: () async {
-                          if(logInController.validatePasswordText == null && logInController.validateEmailText == null){
-                            if(!logInController.userClickedOnLoginButton.value) {
-                            logInController.userClickedOnLoginButton.value = true;
-                            logInController..checkEmailValidation()
-                            ..checkPasswordValidation();
-                              FocusManager.instance.primaryFocus?.unfocus();
-                              await logInController.loginUser(context: context);
-                            Navigator.push(context, MaterialPageRoute(
-                                builder: (BuildContext context) => CustomBottomNavigationBar(),
-                              ));
-                            logInController.userClickedOnLoginButton.value = false;
-                          }
-                        }
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  CustomBottomNavigationBar()),
-                        );
-                      },
-                      text: "Login to your account".toUpperCase())
-                  ),
+                        )
+                      : CustomButton(
+                          onPressed: () async {
+                            if (logInController.validatePasswordText == null &&
+                                logInController.validateEmailText == null) {
+                              if (!logInController
+                                  .userClickedOnLoginButton.value) {
+                                logInController.userClickedOnLoginButton.value =
+                                    true;
+                                logInController
+                                  ..checkEmailValidation()
+                                  ..checkPasswordValidation();
+                                FocusManager.instance.primaryFocus?.unfocus();
+                                await logInController.loginUser(
+                                    context: context);
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          CustomBottomNavigationBar(),
+                                    ));
+                                logInController.userClickedOnLoginButton.value =
+                                    false;
+                              }
+                            }
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      CustomBottomNavigationBar()),
+                            );
+                          },
+                          text: "Login to your account".toUpperCase())),
                   SizedBox(
                     height: 24 * SizeConfig.heightMultiplier!,
                   ),
@@ -157,7 +164,7 @@ class LoginScreen extends StatelessWidget {
                             ));
                       },
                       child: Center(
-                          child:  Text(
+                          child: Text(
                         'Forgot your password?',
                         style: AppTextStyle1.normalGreyTTCommon400.copyWith(
                           fontSize: 14 * SizeConfig.textMultiplier!,

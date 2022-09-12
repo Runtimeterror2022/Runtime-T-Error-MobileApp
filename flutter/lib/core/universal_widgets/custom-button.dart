@@ -4,7 +4,6 @@ import '../constants/app_text_style.dart';
 import '../constants/color_palette.dart';
 import '../reponsive/SizeConfig.dart';
 
-
 class CustomButton extends StatelessWidget {
   CustomButton(
       {Key? key,
@@ -36,10 +35,10 @@ class CustomButton extends StatelessWidget {
               text.toUpperCase(),
               style: textStyle ??
                   AppTextStyle1.normalGreyTTCommon400.copyWith(
-                        fontSize: 12 * SizeConfig.textMultiplier!,
-                        fontWeight: FontWeight.w700,
-                        color: white238,
-                      ),
+                    fontSize: 12 * SizeConfig.textMultiplier!,
+                    fontWeight: FontWeight.w700,
+                    color: white238,
+                  ),
             ),
             onPressed: onPressed,
             style: TextButton.styleFrom(

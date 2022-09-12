@@ -15,36 +15,38 @@ class ClientsListScreen extends StatefulWidget {
 }
 
 class _ClientsListScreenState extends State<ClientsListScreen> {
+  final List<Map<String, dynamic>> _developer = [
+    {'developer': 'Aditya Arya ', 'tech_stack': 'Flutter Developer'},
+    {'developer': 'Kashif Ahmad ', 'tech_stack': 'Flutter Developer'},
+    {'developer': 'Himank Maheshwari', 'tech_stack': 'Flutter Developer'},
+    {'developer': 'Sagar Singh ', 'tech_stack': 'Django Developer'},
+    {'developer': 'Kashif Ahmad ', 'tech_stack': 'Flutter Developer'},
+  ];
+
   final List<Map<String, dynamic>> _employee = [
     {
-      'name': 'Himank Maheshwari',
-      'experience': '3',
-      'tech_stack': 'Flutter Developer',
+      'name': 'Cristian Bodonarasec',
+      'experience': 'Coligomed ',
+      'tech_stack': 'Coligomed Co. Ltd',
       'isAvailable': true,
     },
     {
-      'name': 'Divya Gupta',
-      'experience': '2',
-      'tech_stack': 'Python Developer',
+      'name': 'Rajiv Dalal',
+      'experience': 'Virality',
+      'tech_stack': 'Virality Co Ltd.',
       'isAvailable': false,
     },
     {
-      'name': 'Kashif Ahmad',
-      'experience': '2.5',
-      'tech_stack': 'Flutter Developer',
+      'name': 'Raja Jain',
+      'experience': 'Transact Co Ltd.',
+      'tech_stack': 'Transact',
       'isAvailable': false,
     },
     {
-      'name': 'Rana Atul',
-      'experience': '4',
-      'tech_stack': 'Python Developer',
+      'name': 'Victor Lai',
+      'experience': 'Fitbasix Co Ltd.',
+      'tech_stack': 'Fitbasix',
       'isAvailable': true,
-    },
-    {
-      'name': 'Aditya Arya',
-      'experience': '6',
-      'tech_stack': 'Software Developer',
-      'isAvailable': false,
     },
   ];
 
@@ -86,8 +88,8 @@ class _ClientsListScreenState extends State<ClientsListScreen> {
                     projectName: _employee[index]['experience'],
                     companyName: _employee[index]['tech_stack'],
                     hasDeveloper: _employee[index]['isAvailable'],
-                    developerName: "Himank bro",
-                    developerTech: "flutter",
+                    developerName: _developer[index]['developer'],
+                    developerTech: _developer[index]['tech_stack'],
                     onPressed: () {},
                   );
                 },

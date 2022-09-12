@@ -38,6 +38,7 @@ class _ScheduleCallState extends State<ScheduleCall> {
             children: [
               Container(
                   height: 250,
+                  width: 250,
                   child: Lottie.asset(ImagePath.scheduleLottieIcon)),
             ],
           ),

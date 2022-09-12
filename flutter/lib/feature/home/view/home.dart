@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
@@ -80,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                                 .replaceAll('[', '')
                                 .replaceAll(']', ''),
                             isAvailable:
-                                _homeController.allDevelopers[index].isEngaged!,
+                                !_homeController.allDevelopers[index].isEngaged!,
                             isClient: false,
                             onPressed: () {
                               Navigator.push(
@@ -90,14 +89,15 @@ class _HomePageState extends State<HomePage> {
                                         DeveloperProfileScreen(
                                           _homeController.allDevelopers[index]
                                               .developerName!,
-                                          _homeController.allDevelopers[index]
-                                              .yearOfExperience!
-                                              .toString(),
                                           _homeController
                                               .allDevelopers[index].techStack
                                               .toString()
                                               .replaceAll('[', '')
                                               .replaceAll(']', ''),
+                                          _homeController.allDevelopers[index]
+                                              .yearOfExperience!
+                                              .toString(),
+                                        
                                         )),
                               );
                             },
@@ -108,7 +108,6 @@ class _HomePageState extends State<HomePage> {
             )
           ],
         ),
-       
       ),
     );
   }

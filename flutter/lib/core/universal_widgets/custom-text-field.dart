@@ -134,7 +134,7 @@ List<TextInputFormatter>? formatters;
         keyboardType: textInputType,
         style: AppTextStyle1.normalGreyTTCommon400.copyWith(
             color: black3E, fontSize: 16 * SizeConfig.textMultiplier!),
-        textAlignVertical: TextAlignVertical.bottom,
+        textAlignVertical: TextAlignVertical.center,
         obscureText: isObsecure,
         validator: validation,
         decoration: InputDecoration(
@@ -145,7 +145,7 @@ List<TextInputFormatter>? formatters;
           ),
           contentPadding: EdgeInsets.symmetric(
               horizontal: 16 * SizeConfig.widthMultiplier!,
-              vertical: 12 * SizeConfig.heightMultiplier!),
+              vertical: 5 * SizeConfig.heightMultiplier!),
           floatingLabelBehavior: FloatingLabelBehavior.always,
           enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(

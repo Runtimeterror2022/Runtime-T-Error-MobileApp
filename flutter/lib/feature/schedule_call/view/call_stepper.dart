@@ -1,10 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:intl/intl.dart';
+import 'package:lottie/lottie.dart';
 import 'package:mvc_bolierplate_getx/core/constants/app_text_style.dart';
 import 'package:mvc_bolierplate_getx/core/constants/color_palette.dart';
 import 'package:mvc_bolierplate_getx/core/constants/image_path.dart';
 import 'package:mvc_bolierplate_getx/core/reponsive/SizeConfig.dart';
+import 'package:mvc_bolierplate_getx/core/universal_widgets/custom-button.dart';
+import 'package:mvc_bolierplate_getx/feature/bottom_navigation_bar/view/bottom_navigation_bar_screen.dart';
 
 class CallStepper extends StatefulWidget {
   const CallStepper({Key? key}) : super(key: key);
@@ -14,148 +19,428 @@ class CallStepper extends StatefulWidget {
 }
 
 class _CallStepperState extends State<CallStepper> {
+  final TextEditingController _clientEmailCtrl = TextEditingController();
   int _step = 0;
-  final List<String> _stepper = [
-    'Developer',
-    'Client',
-    // 'Select Date',
-    // 'Finish'
-  ];
+  String selectedDate = '';
+  String selectedTime = '';
+  String procedure = 'Choose a Client';
+  bool isEmailAdded = false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey.shade100,
-      appBar: AppBar(
-        leading: InkWell(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: const Icon(
-            Icons.arrow_back_ios_new,
-            color: Colors.black,
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).requestFocus(FocusNode());
+      },
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        backgroundColor: AppColors.kPureWhite,
+        appBar: AppBar(
+          leading: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: const Icon(
+              Icons.arrow_back_ios_new,
+              color: Colors.black,
+            ),
+          ),
+          backgroundColor: Colors.white,
+          title: Text(
+            procedure,
+            style: AppTextStyle.titleBlackMedium18,
           ),
         ),
-        backgroundColor: Colors.white,
-        title: Text(
-          'Here we go',
-          style: AppTextStyle.titleBlackMedium18,
-        ),
+        body: Column(children: [
+          (_step < 2)
+              ? SizedBox(
+                  height: MediaQuery.of(context).size.height * .03,
+                )
+              : Container(),
+          customStepper()!
+        ]),
       ),
-      body: Column(children: [
-        SizedBox(
-          height: MediaQuery.of(context).size.height * .03,
-        ),
-        Container(
-          color: Colors.grey.shade100,
-          height: MediaQuery.of(context).size.height * .1,
-          child: ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              itemCount: _stepper.length,
-              itemBuilder: (BuildContext context, int index) {
-                return InkWell(
-                  onTap: () {
-                    setState(() {
-                      _step = index;
-                    });
-                  },
-                  child: Container(
-                    margin: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                        color: AppColors.kPureWhite,
-                        border: Border.all(color: AppColors.ktransparent),
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(10))),
-                    child: Padding(
-                      padding: const EdgeInsets.all(15),
-                      child: Center(
-                          child: Text(
-                        _stepper[index],
-                        style: const TextStyle(fontWeight: FontWeight.w600),
-                      )),
-                    ),
-                  ),
-                );
-              }),
-        ),
-        customStepper()!
-      ]),
     );
   }
 
   Widget? customStepper() {
     switch (_step) {
       case 0:
-        return developerClientTileList('Client Name');
+        return clientTileList();
       case 1:
-        return developerClientTileList('Developer Name');
-      // case 2:
-      //   // do something else
-      //   break;
-      // case 3:
-      //   // do something else
-      //   break;
+        return developerTileList();
+      case 2:
+        return _chooseDate();
+      case 3:
+        return meetingScheduled();
       default:
         return const CupertinoActivityIndicator();
     }
   }
 
-  Widget developerClientTileList(
-    String name,
-  ) {
-    return Expanded(
-      child: ListView.builder(itemBuilder: (BuildContext context, int index) {
-        return Container(
-          margin: EdgeInsets.symmetric(
-              horizontal: 10 * SizeConfig.widthMultiplier!,
-              vertical: 5 * SizeConfig.heightMultiplier!),
-          child: ElevatedButton(
-            style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.transparent),
-                padding: MaterialStateProperty.all(EdgeInsets.zero),
-                shape: MaterialStateProperty.all(const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(8))))),
-            onPressed: () {},
-            child: Container(
-              padding: const EdgeInsets.all(16),
-              height: MediaQuery.of(context).size.height * .14,
-              decoration: const BoxDecoration(
-                  color: AppColors.kPureWhite,
-                  borderRadius: BorderRadius.all(Radius.circular(8))),
+  Widget meetingScheduled() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        SizedBox(child: Lottie.asset('assets/lottie/finish.json')),
+        SizedBox(
+          height: MediaQuery.of(context).size.height * .1,
+        ),
+        Text(
+          'Your meeting is scheduled',
+          style: AppTextStyle.titleBlackMedium18,
+        ),
+        Text(
+          'Hoorayyyyy',
+          style: AppTextStyle.titleBlackMedium18,
+        ),
+        SizedBox(
+          height: MediaQuery.of(context).size.height * .04,
+        ),
+        SizedBox(
+          width: MediaQuery.of(context).size.width * .4,
+          child: CustomButton(
+            text: 'Done',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const CustomBottomNavigationBar()),
+              );
+            },
+          ),
+        )
+      ],
+    );
+  }
+
+  Widget _chooseDate() {
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: Container(
+        width: double.infinity,
+        height: MediaQuery.of(context).size.height * .8,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+              margin: const EdgeInsets.all(10),
+              child: TextField(
+                controller: _clientEmailCtrl,
+                decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            isEmailAdded = true;
+                            FocusScope.of(context).requestFocus(FocusNode());
+                          });
+                        },
+                        icon: const Icon(
+                          Icons.add_box,
+                          color: Colors.grey,
+                        )),
+                    labelText: 'Enter Client Email',
+                    prefixIcon: const Icon(Icons.email_sharp)),
+              ),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * .05),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  alignment: Alignment.center,
+                  width: MediaQuery.of(context).size.width * .3,
+                  child: CustomButton(
+                    onPressed: () {
+                      DatePicker.showDatePicker(context,
+                          showTitleActions: true,
+                          minTime: DateTime.now(),
+                          maxTime: DateTime(2050, 6, 7),
+                          onChanged: (date) {}, onConfirm: (date) {
+                        setState(() {
+                          selectedDate = date.toString().substring(0, 10);
+                        });
+                      }, currentTime: DateTime.now(), locale: LocaleType.en);
+                    },
+                    text: 'Choose Date',
+                    textStyle: AppTextStyle.whiteRegular10,
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.center,
+                  width: MediaQuery.of(context).size.width * .3,
+                  child: CustomButton(
+                    onPressed: () {
+                      DatePicker.showTime12hPicker(context,
+                          showTitleActions: true, onChanged: (date) {
+                        // print('change $date in time zone ' +
+                        //     date.timeZoneOffset.inHours.toString());
+                      }, onConfirm: (time) {
+                        setState(() {
+                          selectedTime = formatTimeOfDay(time);
+                        });
+                      }, currentTime: DateTime.now());
+                    },
+                    text: 'Choose Time',
+                    textStyle: AppTextStyle.whiteRegular10,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * .05),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .95,
+                  child: const Divider(
+                    thickness: 1,
+                    height: 1,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * .02),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .95,
               child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SvgPicture.asset(ImagePath.userIcon),
-                    const SizedBox(width: 14),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Selected Client :',
+                    style: AppTextStyle.grey300Regular13,
+                  ),
+                  Text(
+                    'Client Name',
+                    style: AppTextStyle.blackRegular16,
+                  )
+                ],
+              ),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * .02),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .95,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Selected Developer :',
+                    style: AppTextStyle.grey300Regular13,
+                  ),
+                  Text(
+                    'Developer Name',
+                    style: AppTextStyle.blackRegular16,
+                  )
+                ],
+              ),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * .02),
+            (selectedDate != '' && selectedTime != '')
+                ? SizedBox(
+                    width: MediaQuery.of(context).size.width * .95,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        Text(
+                          'Selected Meeting Time :',
+                          style: AppTextStyle.grey300Regular13,
+                        ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text(name, style: AppTextStyle.blackBold14),
-                            const SizedBox(width: 8),
+                            Text(
+                              '$selectedDate',
+                              style: AppTextStyle.blackRegular16,
+                            ),
+                            Text(
+                              ' at $selectedTime',
+                              style: AppTextStyle.blackRegular16,
+                            ),
                           ],
-                        ),
-                        const SizedBox(height: 5),
-                        Text(
-                          'Company Name',
-                          style: AppTextStyle.grey300Regular12,
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          'Project',
-                          style: AppTextStyle.grey300Regular10,
                         )
                       ],
                     ),
-                  ]),
-            ),
-          ),
-        );
-      }),
+                  )
+                : Container(),
+            SizedBox(height: MediaQuery.of(context).size.height * .02),
+            (isEmailAdded)
+                ? SizedBox(
+                    width: MediaQuery.of(context).size.width * .95,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Selected Email :',
+                          style: AppTextStyle.grey300Regular13,
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              '${_clientEmailCtrl.text}',
+                              style: AppTextStyle.blackRegular16,
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  )
+                : Container(),
+            const Spacer(),
+            CustomButton(
+                onPressed: () {
+                  setState(() {
+                    _step = 3;
+                  });
+                },
+                text: 'Schedule'),
+          ],
+        ),
+      ),
     );
+  }
+
+  Widget clientTileList() {
+    return Expanded(
+      child: ListView.builder(
+          itemCount: 5,
+          physics: const BouncingScrollPhysics(),
+          itemBuilder: (BuildContext context, int index) {
+            return Container(
+              margin: EdgeInsets.symmetric(
+                  horizontal: 10 * SizeConfig.widthMultiplier!,
+                  vertical: 7 * SizeConfig.heightMultiplier!),
+              child: ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all(Colors.transparent),
+                    padding: MaterialStateProperty.all(EdgeInsets.zero),
+                    shape: MaterialStateProperty.all(
+                        const RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(8))))),
+                onPressed: () {
+                  setState(() {
+                    _step = 1;
+                    procedure = 'Choose a Developer';
+                  });
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(16),
+                  height: MediaQuery.of(context).size.height * .14,
+                  decoration: const BoxDecoration(
+                      color: AppColors.kPureWhite,
+                      borderRadius: BorderRadius.all(Radius.circular(8))),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SvgPicture.asset(ImagePath.userIcon),
+                        const SizedBox(width: 14),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text('Client Name',
+                                    style: AppTextStyle.blackBold14),
+                                const SizedBox(width: 8),
+                              ],
+                            ),
+                            const SizedBox(height: 5),
+                            Text(
+                              'Company Name',
+                              style: AppTextStyle.grey300Regular12,
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              'Project',
+                              style: AppTextStyle.grey300Regular10,
+                            )
+                          ],
+                        ),
+                      ]),
+                ),
+              ),
+            );
+          }),
+    );
+  }
+
+  Widget developerTileList() {
+    return Expanded(
+      child: ListView.builder(
+          itemCount: 5,
+          physics: const BouncingScrollPhysics(),
+          itemBuilder: (BuildContext context, int index) {
+            return Container(
+              margin: EdgeInsets.symmetric(
+                  horizontal: 10 * SizeConfig.widthMultiplier!,
+                  vertical: 7 * SizeConfig.heightMultiplier!),
+              child: ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all(Colors.transparent),
+                    padding: MaterialStateProperty.all(EdgeInsets.zero),
+                    shape: MaterialStateProperty.all(
+                        const RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(8))))),
+                onPressed: () {
+                  setState(() {
+                    _step = 2;
+                    procedure = 'Finalizing the Meeting';
+                  });
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(16),
+                  height: MediaQuery.of(context).size.height * .14,
+                  decoration: const BoxDecoration(
+                      color: AppColors.kPureWhite,
+                      borderRadius: BorderRadius.all(Radius.circular(8))),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SvgPicture.asset(ImagePath.userIcon),
+                        const SizedBox(width: 14),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text('Developer Name',
+                                    style: AppTextStyle.blackBold14),
+                                const SizedBox(width: 8),
+                              ],
+                            ),
+                            const SizedBox(height: 5),
+                            Text(
+                              'Company Name',
+                              style: AppTextStyle.grey300Regular12,
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              'Project',
+                              style: AppTextStyle.grey300Regular10,
+                            )
+                          ],
+                        ),
+                      ]),
+                ),
+              ),
+            );
+          }),
+    );
+  }
+
+  String formatTimeOfDay(DateTime tod) {
+    final now = new DateTime.now();
+    final dt = DateTime(now.year, now.month, now.day, tod.hour, tod.minute);
+    final format = DateFormat.jm(); //"6:00 AM"
+    return format.format(dt);
   }
 }
