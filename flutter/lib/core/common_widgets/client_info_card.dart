@@ -9,7 +9,7 @@ import 'package:mvc_bolierplate_getx/feature/bottom_navigation_bar/view/bottom_n
 class ClientInfoCard extends StatelessWidget {
   const ClientInfoCard(
       {required this.name,
-      required this.projectName,
+      required this.clientEmail,
       required this.companyName,
       required this.hasDeveloper,
       this.alreadyInteracted,
@@ -20,7 +20,7 @@ class ClientInfoCard extends StatelessWidget {
       : super(key: key);
 
   final String name;
-  final String projectName;
+  final String clientEmail;
   final String companyName;
   final String? developerTech;
   final String? developerName;
@@ -76,7 +76,7 @@ class ClientInfoCard extends StatelessWidget {
           DeveloperInfoCard(
             name: name,
             experience: null,
-            projectName: projectName,
+            projectName: clientEmail,
             techStack: companyName,
             isAvailable: hasDeveloper,
             isClient: true,
