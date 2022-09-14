@@ -13,7 +13,10 @@ class LogInService {
   Future<bool> loginUser(
       {required String email, required String password}) async {
     final response = await dio?.post(ApiUrl.signIn,
-        data: {'email': email, 'sale_password': password});
+        data: {'email': email,
+          'sale_password': password,
+          'is_superadmin':false
+        });
     log(response!.statusCode.toString());
     log(response.data.toString());
     log(response.statusMessage.toString());

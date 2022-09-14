@@ -21,18 +21,32 @@ class LoginController extends GetxController {
   final TextEditingController emailLoginController = TextEditingController();
   final TextEditingController emailResetController = TextEditingController();
 
+  Future<void> setData({required bool? token}) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('token', token!);
+  }
 
   Future<void> loginUser({required BuildContext context}) async {
     var data =  await LogInService().loginUser(
          email: emailLoginController.text,
         password: passwordController.text);
+    print(data);
     if(data == true ){
       ShowCustomToast().showToast(message: "Successfully logged in");
+      await setData(token: true);
+      await Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (BuildContext context) =>
+                CustomBottomNavigationBar(),
+          ));
     //   Navigator.push(context, MaterialPageRoute(
     //       builder: (BuildContext context) => CustomBottomNavigationBar(),
     // ));
     } else if(data == false ){
-      ShowCustomToast().showToast(errorMessage:true,message: "Successfully logged in");
+      print("error1");
+    } else {
+      print("error");
     }
 
   }
@@ -84,15 +98,7 @@ class LoginController extends GetxController {
     update(["validate-forgot-password-email-text"]);
   }
 
-  Future<void> setdata({String? token}) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('token', token!);
-  }
 
-  Future<void> setUserId({String? id}) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('id', id!);
-  }
 
   void deleteData({required BuildContext context}) async {
     final preferences = await SharedPreferences.getInstance();

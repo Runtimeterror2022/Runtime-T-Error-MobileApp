@@ -8,6 +8,7 @@ import 'package:mvc_bolierplate_getx/feature/log_in/view/login_screen.dart';
 
 import 'core/reponsive/SizeConfig.dart';
 import 'feature/log_in/view/login_screen.dart';
+import 'feature/log_in/view/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
   // final AppTranslations translations;
@@ -48,7 +49,7 @@ class MyApp extends StatelessWidget {
                   ),
                   debugShowCheckedModeBanner: false,
                   title: 'MyApp',
-                  home: LoginScreen(),
+                  home: const SplashScreen2(),
                 );
               })));
 }
