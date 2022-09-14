@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
@@ -89,22 +88,57 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Obx(
-              () => _homeController.isAllDeveloperLoading.value && false
+              () => _homeController.isAllDeveloperLoading.value
                   ? const Expanded(
                       child: Center(
                         child: CircularProgressIndicator(),
                       ),
                     )
+                  // : Expanded(
+                  //     child: ListView.builder(
+                  //       physics: const BouncingScrollPhysics(),
+                  //       itemCount: _employee.length,
+                  //       itemBuilder: (BuildContext context, int index) {
+                  //         return DeveloperInfoCard(
+                  //           name: _employee[index]['name'],
+                  //           experience: _employee[index]['experience'],
+                  //           techStack: _employee[index]['tech_stack'],
+                  //           isAvailable: _employee[index]['isAvailable'],
+                  //           isClient: false,
+                  //           onPressed: () {
+                  //             Navigator.push(
+                  //               context,
+                  //               MaterialPageRoute(
+                  //                   builder: (context) =>
+                  //                       DeveloperProfileScreen(
+                  //                         _employee[index]['name'],
+                  //                         _employee[index]['tech_stack'],
+                  //                         _employee[index]['experience'],
+                  //                       )),
+                  //             );
+                  //           },
+                  //         );
+                  //       },
+                  //     ),
+                  //   ),
                   : Expanded(
                       child: ListView.builder(
                         physics: const BouncingScrollPhysics(),
-                        itemCount: _employee.length,
+                        itemCount: _homeController.allDevelopers.length,
                         itemBuilder: (BuildContext context, int index) {
                           return DeveloperInfoCard(
-                            name: _employee[index]['name'],
-                            experience: _employee[index]['experience'],
-                            techStack: _employee[index]['tech_stack'],
-                            isAvailable: _employee[index]['isAvailable'],
+                            name: _homeController
+                                .allDevelopers[index].developerName!,
+                            experience: _homeController
+                                .allDevelopers[index].yearOfExperience!
+                                .toString(),
+                            techStack: _homeController
+                                .allDevelopers[index].techStack
+                                .toString()
+                                .replaceAll('[', '')
+                                .replaceAll(']', ''),
+                            isAvailable:
+                                _homeController.allDevelopers[index].isEngaged!,
                             isClient: false,
                             onPressed: () {
                               Navigator.push(
@@ -112,9 +146,33 @@ class _HomePageState extends State<HomePage> {
                                 MaterialPageRoute(
                                     builder: (context) =>
                                         DeveloperProfileScreen(
-                                          _employee[index]['name'],
-                                          _employee[index]['tech_stack'],
-                                          _employee[index]['experience'],
+                                          name: _homeController
+                                              .allDevelopers[index]
+                                              .developerName!,
+                                          experience: _homeController
+                                              .allDevelopers[index]
+                                              .yearOfExperience!
+                                              .toString(),
+                                          techStack: _homeController
+                                              .allDevelopers[index].techStack
+                                              .toString()
+                                              .replaceAll('[', '')
+                                              .replaceAll(']', ''),
+                                          joiningDate: _homeController
+                                                  .allDevelopers[index]
+                                                  .dateJoined ??
+                                              DateTime.now(),
+                                          companyId: _homeController
+                                                  .allDevelopers[index]
+                                                  .companyId ??
+                                              '',
+                                          inductionComment: _homeController
+                                                  .allDevelopers[index]
+                                                  .inductionComment ??
+                                              '',
+                                          developerId: _homeController
+                                                  .allDevelopers[index].id ??
+                                              '',
                                         )),
                               );
                             },
@@ -122,52 +180,9 @@ class _HomePageState extends State<HomePage> {
                         },
                       ),
                     ),
-              // Expanded(
-              //         child: ListView.builder(
-              //           physics: const BouncingScrollPhysics(),
-              //           itemCount: _homeController.allDevelopers.length,
-              //           itemBuilder: (BuildContext context, int index) {
-              //             return DeveloperInfoCard(
-              //               name: _homeController
-              //                   .allDevelopers[index].developerName!,
-              //               experience: _homeController
-              //                   .allDevelopers[index].yearOfExperience!
-              //                   .toString(),
-              //               techStack: _homeController
-              //                   .allDevelopers[index].techStack
-              //                   .toString()
-              //                   .replaceAll('[', '')
-              //                   .replaceAll(']', ''),
-              //               isAvailable:
-              //                   _homeController.allDevelopers[index].isEngaged!,
-              //               isClient: false,
-              //               onPressed: () {
-              //                 Navigator.push(
-              //                   context,
-              //                   MaterialPageRoute(
-              //                       builder: (context) =>
-              //                           DeveloperProfileScreen(
-              //                             _homeController.allDevelopers[index]
-              //                                 .developerName!,
-              //                             _homeController.allDevelopers[index]
-              //                                 .yearOfExperience!
-              //                                 .toString(),
-              //                             _homeController
-              //                                 .allDevelopers[index].techStack
-              //                                 .toString()
-              //                                 .replaceAll('[', '')
-              //                                 .replaceAll(']', ''),
-              //                           )),
-              //                 );
-              //               },
-              //             );
-              //           },
-              //         ),
-              //       ),
             )
           ],
         ),
-       
       ),
     );
   }

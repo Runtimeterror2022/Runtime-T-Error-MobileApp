@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mvc_bolierplate_getx/core/common_widgets/scheduled_calls_screen.dart';
 import 'package:mvc_bolierplate_getx/core/constants/app_text_style.dart';
+import 'package:mvc_bolierplate_getx/feature/scheduled_call_screen/controller/scheduled_calls_controller.dart';
 
 class CallsForParticularDeveloper extends StatelessWidget {
   CallsForParticularDeveloper(
-      {Key? key, this.title, this.developerName, this.techStack})
+      {Key? key,
+      this.title,
+      this.developerName,
+      this.techStack,
+      required this.developerId})
       : super(key: key);
+
+  final ScheduleCallController _scheduleCallController =
+      Get.put(ScheduleCallController());
 
   String? title;
   String? developerName;
+  String? developerId;
   String? techStack;
   final List<Map<String, dynamic>> _listOfCalls = [
     {
@@ -55,6 +65,7 @@ class CallsForParticularDeveloper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    _scheduleCallController.getAllScheduledCalls(developerId: developerId);
     _listOfCalls.shuffle();
     return GestureDetector(
       onTap: () {

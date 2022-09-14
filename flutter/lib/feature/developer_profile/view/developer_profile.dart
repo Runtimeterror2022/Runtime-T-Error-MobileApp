@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:mvc_bolierplate_getx/core/constants/app_text_style.dart';
 import 'package:mvc_bolierplate_getx/core/constants/color_palette.dart';
 import 'package:mvc_bolierplate_getx/core/reponsive/SizeConfig.dart';
@@ -9,9 +10,20 @@ import 'package:random_avatar/random_avatar.dart';
 class DeveloperProfileScreen extends StatefulWidget {
   String name;
   String techStack;
+  String developerId;
+  String inductionComment;
   String experience;
+  String companyId;
+  DateTime joiningDate;
   // ignore: sort_constructors_first
-  DeveloperProfileScreen(this.name, this.techStack, this.experience);
+  DeveloperProfileScreen(
+      {required this.name,
+      required this.techStack,
+      required this.developerId,
+      required this.experience,
+      required this.joiningDate,
+      required this.inductionComment,
+      required this.companyId});
 
   @override
   State<DeveloperProfileScreen> createState() => _DeveloperProfileScreenState();
@@ -106,6 +118,7 @@ class _DeveloperProfileScreenState extends State<DeveloperProfileScreen> {
                         title: 'Previous Call',
                         developerName: widget.name,
                         techStack: widget.techStack,
+                        developerId: widget.developerId,
                       ));
                     },
                     child: const Text('Previous Call'),
@@ -120,6 +133,7 @@ class _DeveloperProfileScreenState extends State<DeveloperProfileScreen> {
                       ),
                       onPressed: () {
                         Get.to(CallsForParticularDeveloper(
+                          developerId: widget.developerId,
                           title: 'Upcoming Call',
                         ));
                       },
@@ -138,14 +152,15 @@ class _DeveloperProfileScreenState extends State<DeveloperProfileScreen> {
                 child: Column(
                   children: [
                     _title('Date of joining'),
-                    _subtitle('01/09/1999'),
+                    _subtitle(
+                        DateFormat('dd/MM/yyyy').format(widget.joiningDate)),
                     const SizedBox(height: 15),
-                    _title('Client'),
+                    _title('Company Id'),
                     const SizedBox(height: 1),
-                    _subtitle('Victor , Bodnarasec'),
+                    _subtitle(widget.companyId),
                     const SizedBox(height: 15),
                     _title('Induction'),
-                    _subtitle('Done'),
+                    _subtitle(widget.inductionComment),
                     const SizedBox(height: 15),
                     _title('Comments'),
                     Text(

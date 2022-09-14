@@ -1,8 +1,8 @@
 class ApiUrl {
-  static String liveBaseURL =
-      'https://9bee-2402-3a80-9fa-20bc-2de0-e2df-f913-63ae.ngrok.io/';
+  static String liveBaseURL = 'http://e31f-103-119-165-26.ngrok.io/';
   static String signIn = '${liveBaseURL}accounts/login';
 
-  static String getAllDevelopers =
-      '${liveBaseURL}accounts/developer?developer_id=null';
+  static String getAllDevelopers = '${liveBaseURL}accounts/get/developer';
+  static String getAllScheduleCalls =
+      '${liveBaseURL}accounts/get/schedule/meeting';
 }
