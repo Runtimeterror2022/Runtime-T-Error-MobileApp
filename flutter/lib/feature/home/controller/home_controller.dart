@@ -9,11 +9,11 @@ class HomeController extends GetxController {
   List<ADeveloperModel> allDevelopers = [];
   RxBool isAllDeveloperLoading = true.obs;
   Future<void> getAllDevelopersList() async {
+    isAllDeveloperLoading.value = true;
     final response = await HomeService.getAllDevelopers();
     if (response != null) {
       allDevelopers = List<ADeveloperModel>.from(
           response['data'].map((x) => ADeveloperModel.fromJson(x)));
-      // DeveloperListModel.fromJson(jsonDecode(jsonEncode(response)));
       isAllDeveloperLoading.value = false;
     }
   }

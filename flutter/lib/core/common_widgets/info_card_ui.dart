@@ -120,7 +120,7 @@ class DeveloperInfoCard extends StatelessWidget {
                     const SizedBox(height: 4),
                     isClient
                         ? Text(
-                            'Project - $projectName',
+                            'Email - $projectName',
                             style: AppTextStyle.grey300Regular10,
                           )
                         : Text(
@@ -129,22 +129,6 @@ class DeveloperInfoCard extends StatelessWidget {
                           ),
                   ],
                 ),
-                const Spacer(),
-                Container(
-                  child: IconButton(
-                    alignment: Alignment.topCenter,
-                    onPressed: () {
-                      // showModalBottomSheet<void>(
-                      //   context: context,
-                      //   builder: (BuildContext context) {
-                      //     return callTabView();
-                      //   },
-                      // );
-                    },
-                    icon: const Icon(Icons.more_vert),
-                    color: AppColors.kgrey300,
-                  ),
-                )
               ]),
         ),
       ),
