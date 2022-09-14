@@ -12,7 +12,6 @@ class ScheduleCallController extends GetxController {
         await ScheduledCallService.getAllScheduledCalls(developerId);
     if (resopnse != null) {
       scheduledCallsModel.value = ScheduledCallsModel.fromJson(resopnse);
-      print(scheduledCallsModel.value.data![0].developerId);
       isScheduleCallLoading.value = false;
     }
   }

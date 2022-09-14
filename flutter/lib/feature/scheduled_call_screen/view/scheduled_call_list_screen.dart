@@ -9,53 +9,10 @@ class ScheduledCallsListScreen extends StatelessWidget {
 
   final ScheduleCallController _scheduleCallController =
       Get.put(ScheduleCallController());
-  final List<Map<String, dynamic>> _listOfCalls = [
-    {
-      "clientName": "Victor Lai",
-      "ProjectName": "FitBasix",
-      "developerName": "Sagar Singh",
-      "techStack": "Flutter Developer",
-      "callInitiated": true,
-      'isClient': true
-    },
-    {
-      "clientName": "Victor Lai",
-      "ProjectName": "FitBasix",
-      "developerName": "Pawan",
-      "techStack": "Node JS Developer",
-      "callInitiated": true,
-      'isClient': true
-    },
-    {
-      "clientName": "Caligomed inc",
-      "ProjectName": "Caligomed",
-      "developerName": "Aditya Arya",
-      "techStack": "Flutter Developer",
-      "callInitiated": false,
-      'isClient': true
-    },
-    {
-      "clientName": "Enercent inc",
-      "ProjectName": "True Power",
-      "developerName": "Kashif Ahmad",
-      "techStack": "Flutter Developer",
-      "callInitiated": false,
-      'isClient': true
-    },
-    {
-      "clientName": "Tranzact inc",
-      "ProjectName": "Tranzact",
-      "developerName": "Kashif Ahmad",
-      "techStack": "Flutter Developer",
-      "callInitiated": true,
-      'isClient': true
-    },
-  ];
 
   @override
   Widget build(BuildContext context) {
     _scheduleCallController.getAllScheduledCalls();
-    _listOfCalls.shuffle();
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).requestFocus(FocusNode());
@@ -77,20 +34,53 @@ class ScheduledCallsListScreen extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * .02,
             ),
-            Expanded(
-              child: ListView.builder(
-                physics: const BouncingScrollPhysics(),
-                itemCount: _listOfCalls.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return ScheduledCallsUI(
-                      clientName: _listOfCalls[index]['clientName'],
-                      ProjectName: _listOfCalls[index]['ProjectName'],
-                      developerName: _listOfCalls[index]['developerName'],
-                      techStack: _listOfCalls[index]['techStack'],
-                      callInitiated: _listOfCalls[index]['callInitiated'],
-                      isClient: _listOfCalls[index]['isClient']);
-                },
-              ),
+            Obx(
+              () => _scheduleCallController.isScheduleCallLoading.value
+                  ? const Expanded(
+                      child: Center(
+                        child: CircularProgressIndicator(),
+                      ),
+                    )
+                  : Expanded(
+                      child: ListView.builder(
+                        physics: const BouncingScrollPhysics(),
+                        itemCount: _scheduleCallController
+                            .scheduledCallsModel.value.data!.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return ScheduledCallsUI(
+                              clientName: _scheduleCallController
+                                  .scheduledCallsModel
+                                  .value
+                                  .data![index]
+                                  .developerId!
+                                  .substring(0, 6),
+                              ProjectName: _scheduleCallController
+                                  .scheduledCallsModel
+                                  .value
+                                  .data![index]
+                                  .startTime!,
+                              developerName: _scheduleCallController
+                                  .scheduledCallsModel.value.devList![0]
+                                  .singleWhere((element) =>
+                                      element.id ==
+                                      _scheduleCallController
+                                          .scheduledCallsModel
+                                          .value
+                                          .data![index]
+                                          .developerId!)
+                                  .developerName!,
+                              techStack: _scheduleCallController
+                                  .scheduledCallsModel.value.devList![0]
+                                  .singleWhere((element) => element.id == _scheduleCallController.scheduledCallsModel.value.data![index].developerId!)
+                                  .techStack
+                                  .toString()
+                                  .replaceAll('[', '')
+                                  .replaceAll(']', ''),
+                              callInitiated: _scheduleCallController.scheduledCallsModel.value.data![index].endDate == DateTime.now(),
+                              isClient: true);
+                        },
+                      ),
+                    ),
             ),
           ],
         ),
