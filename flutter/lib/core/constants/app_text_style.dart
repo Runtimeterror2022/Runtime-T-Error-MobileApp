@@ -24,6 +24,12 @@ abstract class AppTextStyle {
     fontWeight: FontWeight.w400,
     color: AppColors.kgrey300,
   );
+
+  static TextStyle blueRegular12 = GoogleFonts.montserrat(
+    fontSize: 12 * SizeConfig.textMultiplier!,
+    fontWeight: FontWeight.w400,
+    color: Color(0xff0076BC),
+  );
   static TextStyle grey300Regular10 = GoogleFonts.montserrat(
     fontSize: 10 * SizeConfig.textMultiplier!,
     fontWeight: FontWeight.w400,
@@ -43,6 +49,11 @@ abstract class AppTextStyle {
     fontSize: 10 * SizeConfig.textMultiplier!,
     fontWeight: FontWeight.w600,
     color: AppColors.kPureBlack,
+  );
+  static TextStyle greyRegular13 = GoogleFonts.montserrat(
+    fontSize: 13 * SizeConfig.textMultiplier!,
+    fontWeight: FontWeight.w600,
+    color: AppColors.kgrey300,
   );
   static TextStyle whiteRegular10 = GoogleFonts.montserrat(
     fontSize: 10 * SizeConfig.textMultiplier!,

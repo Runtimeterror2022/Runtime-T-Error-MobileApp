@@ -135,6 +135,8 @@ class _DeveloperProfileScreenState extends State<DeveloperProfileScreen> {
                         Get.to(CallsForParticularDeveloper(
                           developerId: widget.developerId,
                           title: 'Upcoming Call',
+                          developerName: widget.name,
+                          techStack: widget.techStack,
                         ));
                       },
                       child: const Text('Upcoming Call'))

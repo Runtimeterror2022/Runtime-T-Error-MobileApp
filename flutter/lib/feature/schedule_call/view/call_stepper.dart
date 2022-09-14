@@ -19,7 +19,9 @@ class CallStepper extends StatefulWidget {
 }
 
 class _CallStepperState extends State<CallStepper> {
-  final TextEditingController _clientEmailCtrl = TextEditingController();
+  final TextEditingController _meetingTitleCtrl = TextEditingController();
+  final TextEditingController _meetingNotesCtrl = TextEditingController();
+
   int _step = 0;
   String selectedDate = '';
   String selectedTime = '';
@@ -69,7 +71,7 @@ class _CallStepperState extends State<CallStepper> {
       case 1:
         return developerTileList();
       case 2:
-        return _chooseDate();
+        return _scheduleMeeting();
       case 3:
         return meetingScheduled();
       default:
@@ -82,7 +84,7 @@ class _CallStepperState extends State<CallStepper> {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        SizedBox(child: Lottie.asset('assets/lottie/finish.json')),
+        SizedBox(child: Lottie.asset('assets/lottie/scheduled.json')),
         SizedBox(
           height: MediaQuery.of(context).size.height * .1,
         ),
@@ -114,190 +116,362 @@ class _CallStepperState extends State<CallStepper> {
     );
   }
 
-  Widget _chooseDate() {
+  Widget _scheduleMeeting() {
     return Padding(
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.all(12),
       child: Container(
         width: double.infinity,
-        height: MediaQuery.of(context).size.height * .8,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Container(
-              margin: const EdgeInsets.all(10),
-              child: TextField(
-                controller: _clientEmailCtrl,
-                decoration: InputDecoration(
-                    suffixIcon: IconButton(
-                        onPressed: () {
-                          setState(() {
-                            isEmailAdded = true;
-                            FocusScope.of(context).requestFocus(FocusNode());
-                          });
-                        },
-                        icon: const Icon(
-                          Icons.add_box,
-                          color: Colors.grey,
-                        )),
-                    labelText: 'Enter Client Email',
-                    prefixIcon: const Icon(Icons.email_sharp)),
+            ElevatedButton(
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(Colors.transparent),
+                  padding: MaterialStateProperty.all(EdgeInsets.zero),
+                  shape: MaterialStateProperty.all(const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8))))),
+              onPressed: () {},
+              child: Container(
+                height: 104,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    color: AppColors.kPureWhite,
+                    border: Border.all(
+                      color: const Color(0xffE6F1F8),
+                    ),
+                    borderRadius: const BorderRadius.all(Radius.circular(10))),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Client Name',
+                        style: AppTextStyle.blackRegular16,
+                      ),
+                      const SizedBox(
+                        height: 6,
+                      ),
+                      Text(
+                        'Project Name',
+                        style: AppTextStyle.greyRegular13,
+                      ),
+                      const SizedBox(
+                        height: 4,
+                      ),
+                      Text(
+                        'Developer Assigned',
+                        style: AppTextStyle.greyRegular13,
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * .05),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  alignment: Alignment.center,
-                  width: MediaQuery.of(context).size.width * .3,
-                  child: CustomButton(
-                    onPressed: () {
-                      DatePicker.showDatePicker(context,
-                          showTitleActions: true,
-                          minTime: DateTime.now(),
-                          maxTime: DateTime(2050, 6, 7),
-                          onChanged: (date) {}, onConfirm: (date) {
-                        setState(() {
-                          selectedDate = date.toString().substring(0, 10);
-                        });
-                      }, currentTime: DateTime.now(), locale: LocaleType.en);
-                    },
-                    text: 'Choose Date',
-                    textStyle: AppTextStyle.whiteRegular10,
-                  ),
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  width: MediaQuery.of(context).size.width * .3,
-                  child: CustomButton(
-                    onPressed: () {
-                      DatePicker.showTime12hPicker(context,
-                          showTitleActions: true, onChanged: (date) {
-                        // print('change $date in time zone ' +
-                        //     date.timeZoneOffset.inHours.toString());
-                      }, onConfirm: (time) {
-                        setState(() {
-                          selectedTime = formatTimeOfDay(time);
-                        });
-                      }, currentTime: DateTime.now());
-                    },
-                    text: 'Choose Time',
-                    textStyle: AppTextStyle.whiteRegular10,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height * .05),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * .95,
-                  child: const Divider(
-                    thickness: 1,
-                    height: 1,
-                    color: Colors.black,
-                  ),
+                  width: MediaQuery.of(context).size.width * .3,
+                  child: ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(AppColors.kPureWhite),
+                          // padding: MaterialStateProperty.all(EdgeInsets.zero),
+                          shape: MaterialStateProperty.all(
+                              const RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(8))))),
+                      onPressed: () {
+                        DatePicker.showDatePicker(context,
+                            showTitleActions: true,
+                            minTime: DateTime.now(),
+                            maxTime: DateTime(2050, 6, 7),
+                            onChanged: (date) {}, onConfirm: (date) {
+                          setState(() {
+                            selectedDate = date.toString().substring(0, 10);
+                          });
+                        }, currentTime: DateTime.now(), locale: LocaleType.en);
+                      },
+                      child: Container(
+                        color: AppColors.kPureWhite,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              Icons.calendar_today,
+                              color: Color(0xff0076BC),
+                            ),
+                            const SizedBox(width: 8),
+                            Text(
+                              'Set Date',
+                              style: AppTextStyle.blueRegular12,
+                            )
+                          ],
+                        ),
+                      )),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .3,
+                  child: ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(AppColors.kPureWhite),
+                          // padding: MaterialStateProperty.all(EdgeInsets.zero),
+                          shape: MaterialStateProperty.all(
+                              const RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(8))))),
+                      onPressed: () {
+                        DatePicker.showTime12hPicker(context,
+                            showTitleActions: true, onChanged: (date) {
+                          // print('change $date in time zone ' +
+                          //     date.timeZoneOffset.inHours.toString());
+                        }, onConfirm: (time) {
+                          setState(() {
+                            selectedTime = formatTimeOfDay(time);
+                          });
+                        }, currentTime: DateTime.now());
+                      },
+                      child: Container(
+                        color: AppColors.kPureWhite,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              Icons.timer,
+                              color: Color(0xff0076BC),
+                            ),
+                            const SizedBox(width: 8),
+                            Text(
+                              'Set Time',
+                              style: AppTextStyle.blueRegular12,
+                            )
+                          ],
+                        ),
+                      )),
                 ),
               ],
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * .02),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * .95,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Selected Client :',
-                    style: AppTextStyle.grey300Regular13,
-                  ),
-                  Text(
-                    'Client Name',
-                    style: AppTextStyle.blackRegular16,
-                  )
-                ],
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+            Container(
+              child: TextField(
+                controller: _meetingTitleCtrl,
+                decoration: InputDecoration(
+                    labelStyle: AppTextStyle.grey300Regular13,
+                    labelText: 'Meeting Title'),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * .02),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * .95,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Selected Developer :',
-                    style: AppTextStyle.grey300Regular13,
-                  ),
-                  Text(
-                    'Developer Name',
-                    style: AppTextStyle.blackRegular16,
-                  )
-                ],
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+            Container(
+              child: TextField(
+                controller: _meetingNotesCtrl,
+                decoration: InputDecoration(
+                    labelStyle: AppTextStyle.grey300Regular13,
+                    labelText: 'Notes'),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * .02),
-            (selectedDate != '' && selectedTime != '')
-                ? SizedBox(
-                    width: MediaQuery.of(context).size.width * .95,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Selected Meeting Time :',
-                          style: AppTextStyle.grey300Regular13,
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              '$selectedDate',
-                              style: AppTextStyle.blackRegular16,
-                            ),
-                            Text(
-                              ' at $selectedTime',
-                              style: AppTextStyle.blackRegular16,
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  )
-                : Container(),
-            SizedBox(height: MediaQuery.of(context).size.height * .02),
-            (isEmailAdded)
-                ? SizedBox(
-                    width: MediaQuery.of(context).size.width * .95,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Selected Email :',
-                          style: AppTextStyle.grey300Regular13,
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              '${_clientEmailCtrl.text}',
-                              style: AppTextStyle.blackRegular16,
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  )
-                : Container(),
-            const Spacer(),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
             CustomButton(
                 onPressed: () {
                   setState(() {
                     _step = 3;
                   });
                 },
-                text: 'Schedule'),
+                text: 'Schedule Meeting')
           ],
         ),
       ),
     );
   }
+
+  // Widget _chooseDate() {
+  //   return Padding(
+  //     padding: const EdgeInsets.all(8),
+  //     child: Container(
+  //       width: double.infinity,
+  //       height: MediaQuery.of(context).size.height * .8,
+  //       child: Column(
+  //         mainAxisAlignment: MainAxisAlignment.start,
+  //         children: [
+  //           Container(
+  //             margin: const EdgeInsets.all(10),
+  //             child: TextField(
+  //               controller: _clientEmailCtrl,
+  //               decoration: InputDecoration(
+  //                   suffixIcon: IconButton(
+  //                       onPressed: () {
+  //                         setState(() {
+  //                           isEmailAdded = true;
+  //                           FocusScope.of(context).requestFocus(FocusNode());
+  //                         });
+  //                       },
+  //                       icon: const Icon(
+  //                         Icons.add_box,
+  //                         color: Colors.grey,
+  //                       )),
+  //                   labelText: 'Enter Client Email',
+  //                   prefixIcon: const Icon(Icons.email_sharp)),
+  //             ),
+  //           ),
+  //           SizedBox(height: MediaQuery.of(context).size.height * .05),
+  //           Row(
+  //             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  //             children: [
+  //               Container(
+  //                 alignment: Alignment.center,
+  //                 width: MediaQuery.of(context).size.width * .3,
+  //                 child: CustomButton(
+  //                   onPressed: () {
+  //                     DatePicker.showDatePicker(context,
+  //                         showTitleActions: true,
+  //                         minTime: DateTime.now(),
+  //                         maxTime: DateTime(2050, 6, 7),
+  //                         onChanged: (date) {}, onConfirm: (date) {
+  //                       setState(() {
+  //                         selectedDate = date.toString().substring(0, 10);
+  //                       });
+  //                     }, currentTime: DateTime.now(), locale: LocaleType.en);
+  //                   },
+  //                   text: 'Choose Date',
+  //                   textStyle: AppTextStyle.whiteRegular10,
+  //                 ),
+  //               ),
+  //               Container(
+  //                 alignment: Alignment.center,
+  //                 width: MediaQuery.of(context).size.width * .3,
+  //                 child: CustomButton(
+  //                   onPressed: () {
+  //                     DatePicker.showTime12hPicker(context,
+  //                         showTitleActions: true, onChanged: (date) {
+  //                       // print('change $date in time zone ' +
+  //                       //     date.timeZoneOffset.inHours.toString());
+  //                     }, onConfirm: (time) {
+  //                       setState(() {
+  //                         selectedTime = formatTimeOfDay(time);
+  //                       });
+  //                     }, currentTime: DateTime.now());
+  //                   },
+  //                   text: 'Choose Time',
+  //                   textStyle: AppTextStyle.whiteRegular10,
+  //                 ),
+  //               ),
+  //             ],
+  //           ),
+  //           SizedBox(height: MediaQuery.of(context).size.height * .05),
+  //           Row(
+  //             mainAxisAlignment: MainAxisAlignment.center,
+  //             children: [
+  //               SizedBox(
+  //                 width: MediaQuery.of(context).size.width * .95,
+  //                 child: const Divider(
+  //                   thickness: 1,
+  //                   height: 1,
+  //                   color: Colors.black,
+  //                 ),
+  //               ),
+  //             ],
+  //           ),
+  //           SizedBox(height: MediaQuery.of(context).size.height * .02),
+  //           SizedBox(
+  //             width: MediaQuery.of(context).size.width * .95,
+  //             child: Row(
+  //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //               children: [
+  //                 Text(
+  //                   'Selected Client :',
+  //                   style: AppTextStyle.grey300Regular13,
+  //                 ),
+  //                 Text(
+  //                   'Client Name',
+  //                   style: AppTextStyle.blackRegular16,
+  //                 )
+  //               ],
+  //             ),
+  //           ),
+  //           SizedBox(height: MediaQuery.of(context).size.height * .02),
+  //           SizedBox(
+  //             width: MediaQuery.of(context).size.width * .95,
+  //             child: Row(
+  //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //               children: [
+  //                 Text(
+  //                   'Selected Developer :',
+  //                   style: AppTextStyle.grey300Regular13,
+  //                 ),
+  //                 Text(
+  //                   'Developer Name',
+  //                   style: AppTextStyle.blackRegular16,
+  //                 )
+  //               ],
+  //             ),
+  //           ),
+  //           SizedBox(height: MediaQuery.of(context).size.height * .02),
+  //           (selectedDate != '' && selectedTime != '')
+  //               ? SizedBox(
+  //                   width: MediaQuery.of(context).size.width * .95,
+  //                   child: Row(
+  //                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //                     children: [
+  //                       Text(
+  //                         'Selected Meeting Time :',
+  //                         style: AppTextStyle.grey300Regular13,
+  //                       ),
+  //                       Row(
+  //                         children: [
+  //                           Text(
+  //                             '$selectedDate',
+  //                             style: AppTextStyle.blackRegular16,
+  //                           ),
+  //                           Text(
+  //                             ' at $selectedTime',
+  //                             style: AppTextStyle.blackRegular16,
+  //                           ),
+  //                         ],
+  //                       )
+  //                     ],
+  //                   ),
+  //                 )
+  //               : Container(),
+  //           SizedBox(height: MediaQuery.of(context).size.height * .02),
+  //           (isEmailAdded)
+  //               ? SizedBox(
+  //                   width: MediaQuery.of(context).size.width * .95,
+  //                   child: Row(
+  //                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //                     children: [
+  //                       Text(
+  //                         'Selected Email :',
+  //                         style: AppTextStyle.grey300Regular13,
+  //                       ),
+  //                       Row(
+  //                         children: [
+  //                           Text(
+  //                             '${_clientEmailCtrl.text}',
+  //                             style: AppTextStyle.blackRegular16,
+  //                           ),
+  //                         ],
+  //                       )
+  //                     ],
+  //                   ),
+  //                 )
+  //               : Container(),
+  //           const Spacer(),
+  //           CustomButton(
+  //               onPressed: () {
+  //                 setState(() {
+  //                   _step = 3;
+  //                 });
+  //               },
+  //               text: 'Schedule'),
+  //         ],
+  //       ),
+  //     ),
+  //   );
+  // }
 
   Widget clientTileList() {
     return Expanded(
@@ -390,7 +564,7 @@ class _CallStepperState extends State<CallStepper> {
                 onPressed: () {
                   setState(() {
                     _step = 2;
-                    procedure = 'Finalizing the Meeting';
+                    procedure = 'Schedule meeting';
                   });
                 },
                 child: Container(

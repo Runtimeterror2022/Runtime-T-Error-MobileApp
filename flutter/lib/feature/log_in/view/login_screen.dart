@@ -67,12 +67,11 @@ class LoginScreen extends StatelessWidget {
                             onChanged: (value) {
                               logInController.checkEmailValidation();
                             },
-                            errorText: logInController.validateEmailText,
+                            // errorText: logInController.validateEmailText,
                             // validator: (value) => value!.isEmpty? "This field is Required":null,
                             textInputType: TextInputType.emailAddress,
                             isObsecure: false,
                             hint: "Enter your email", label: 'Email address',
-
                           )),
                   SizedBox(
                     height: 24 * SizeConfig.heightMultiplier!,
@@ -89,7 +88,6 @@ class LoginScreen extends StatelessWidget {
                           textInputType: TextInputType.visiblePassword,
                           isObsecure: obSecurePassword.value,
                           hint: "Enter your password",
-                  
                           onSuffixTap: () {
                             obSecurePassword.value = !obSecurePassword.value;
                             logInController.update(['validate-password-text']);
@@ -115,47 +113,47 @@ class LoginScreen extends StatelessWidget {
                           ),
                         )
                       : CustomButton(
-                          onPressed: () async {
-                            if (logInController.validatePasswordText == null &&
-                                logInController.validateEmailText == null) {
-                              if (!logInController
-                                  .userClickedOnLoginButton.value) {
-                                logInController.userClickedOnLoginButton.value =
-                                    true;
-                                logInController
-                                  ..checkEmailValidation()
-                                  ..checkPasswordValidation();
-                                FocusManager.instance.primaryFocus?.unfocus();
-                                await logInController.loginUser(
-                                    context: context);
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (BuildContext context) =>
-                                          CustomBottomNavigationBar(),
-                                    ));
-                                logInController.userClickedOnLoginButton.value =
-                                    false;
-                              }
-                            }
+                          onPressed: () {
+                            // if (logInController.validatePasswordText == null &&
+                            //     logInController.validateEmailText == null) {
+                            //   if (!logInController
+                            //       .userClickedOnLoginButton.value) {
+                            //     logInController.userClickedOnLoginButton.value =
+                            //         true;
+                            //     logInController
+                            //       ..checkEmailValidation()
+                            //       ..checkPasswordValidation();
+                            //     FocusManager.instance.primaryFocus?.unfocus();
+                            //     await logInController.loginUser(
+                            //         context: context);
+                            //     Navigator.push(
+                            //         context,
+                            //         MaterialPageRoute(
+                            //           builder: (BuildContext context) =>
+                            //               CustomBottomNavigationBar(),
+                            //         ));
+                            //     logInController.userClickedOnLoginButton.value =
+                            //         false;
+                            //   }
+                            // }
                             Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      CustomBottomNavigationBar()),
+                                      const CustomBottomNavigationBar()),
                             );
                           },
-                          text: "Login to your account".toUpperCase())),
+                          text: 'Login to your account'.toUpperCase())),
                   SizedBox(
                     height: 24 * SizeConfig.heightMultiplier!,
                   ),
                   GestureDetector(
-                      onTap: () async {
-                        logInController
-                          ..validateEmailText = null
-                          ..update(['validate-email-text'])
-                          ..validatePasswordText = null
-                          ..update(['validate-password-text']);
+                      onTap: () {
+                        // logInController
+                        //   ..validateEmailText = null
+                        //   ..update(['validate-email-text'])
+                        //   ..validatePasswordText = null
+                        //   ..update(['validate-password-text']);
                         Navigator.push(
                             context,
                             MaterialPageRoute(
